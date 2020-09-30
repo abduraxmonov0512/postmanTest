@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "b6c3d63b-7a4b-4676-91b3-4f32c0ae2f2d",
+		"name": "TenderUz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Dict",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "authorization",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "709b097c-753a-483c-98f2-12534d02f6a3",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+8@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}"
+								},
+								"url": {
+									"raw": "{{domenTest}}/oauth/token",
+									"host": [
+										"{{domenTest}}"
+									],
+									"path": [
+										"oauth",
+										"token"
+									]
+								},
+								"description": "Авторизация юзера"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "ref_country",
+					"item": [
+						{
+							"name": "ref_country",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1af635ad-493e-4051-b289-745fcbbee7f0",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_country\",\r\n    \"params\": {}\r\n}"
+								},
+								"url": {
+									"raw": "{{domenTest}}/rpc",
+									"host": [
+										"{{domenTest}}"
+									],
+									"path": [
+										"rpc"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Выдача записей по каталогу ОКСМ",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "10daea10-cfa7-4072-9a7a-fc2936b6fedd",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d5f54a8d-35ae-4e5c-a537-92821a05ba79",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "0d062203-b205-40d7-8572-88c033a64251",
+			"key": "token",
+			"value": "",
+			"disabled": true
+		},
+		{
+			"id": "06ce7850-bd4a-4beb-9e85-265fc2a045ab",
+			"key": "domenTest",
+			"value": "http://api.test.tender.mf.uz"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
