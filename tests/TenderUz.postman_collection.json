@@ -246,7 +246,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_transpor\",\r\n    \"params\": {\r\n        \r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_transport\",\r\n    \"params\": {\r\n        \r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
