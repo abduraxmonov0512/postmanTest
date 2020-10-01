@@ -70,7 +70,7 @@
 										"id": "1af635ad-493e-4051-b289-745fcbbee7f0",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(300);\r",
+											"    pm.response.to.have.status(200);\r",
 											"});"
 										],
 										"type": "text/javascript"
