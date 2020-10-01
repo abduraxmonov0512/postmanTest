@@ -1111,6 +1111,97 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "ref_product_movement_feature_read",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a3f65754-6bc7-4f0a-92df-e84fb1bd9446",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"id equals to 8\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.result[0].id).to.eql(8);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_product_movement_feature\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 8\r\n        }\r\n    }\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{domenTest}}/rpc",
+									"host": [
+										"{{domenTest}}"
+									],
+									"path": [
+										"rpc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ref_product_movement_feature_search",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2cc8860f-6847-4972-a653-4a679630359f",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body matches фонд\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"фонд\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_product_movement_feature\",\r\n        \"op\": \"read\",\r\n        \"query\": \"фонд\"\r\n    }\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{domenTest}}/rpc",
+									"host": [
+										"{{domenTest}}"
+									],
+									"path": [
+										"rpc"
+									]
+								}
+							},
+							"response": []
 						}
 					],
 					"description": "Выдача записей по каталогу Справочник особенностей перемещения",
@@ -1145,13 +1236,13 @@
 	],
 	"variable": [
 		{
-			"id": "d854be1c-3863-4aad-aeaa-0c8f93dd25e6",
+			"id": "efa904a1-e694-4dd9-bd68-6e348751c32c",
 			"key": "token",
 			"value": "",
 			"disabled": true
 		},
 		{
-			"id": "ed728614-6393-41ae-8c1f-2be19975cfac",
+			"id": "0a1cf62f-4247-4160-811c-7b6dfa858e6c",
 			"key": "domenTest",
 			"value": "http://api.test.tender.mf.uz"
 		}
