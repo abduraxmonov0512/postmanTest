@@ -21,7 +21,19 @@
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
-											"});"
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "7b59f968-0d53-42aa-91ad-69357ff10fbd",
+										"exec": [
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -813,7 +825,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\": 12,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref_unit\",\r\n    \"params\": {}\r\n}",
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_unit\",\r\n        \"op\": \"read\"\r\n    }\r\n}",
 									"options": {
 										"raw": {}
 									}
@@ -1487,7 +1499,7 @@
 							"response": []
 						},
 						{
-							"name": "ref_bank_mfo_reach Copy",
+							"name": "ref_bank_mfo_filter",
 							"event": [
 								{
 									"listen": "test",
@@ -1512,8 +1524,8 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"type": "text",
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -3794,6 +3806,673 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "PurchaseList",
+			"item": [
+				{
+					"name": "authorization",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ddf364f7-8e18-45d0-8827-279414f212d4",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.globals.set(\"token\", pm.response.json().access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+8@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/oauth/token",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_schedule",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7532a95f-45c0-4337-8f02-dc5eca662ce5",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.globals.set(\"schedule_id\", pm.response.json().result.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"create_schedule\",\r\n    \"params\": {\r\n        \"year\": 2100\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						},
+						"description": "Создание план-графика"
+					},
+					"response": []
+				},
+				{
+					"name": "get_schedules",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "325cc6a3-67fb-4736-8f29-ea136490de3c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches 2100\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"2100\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"get_schedules\",\r\n    \"params\": {}\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_schedule_info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ddd0a814-b850-41e6-9099-693bed2cd453",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"id equals to schedulte_id\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.result.id).to.eql(pm.globals.get(\"schedule_id\"));\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 2,\r\n    \"method\": \"get_schedule_info\",\r\n    \"params\": {\r\n        \"id\": \"{{schedule_id}}\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "Получение план-графика"
+					},
+					"response": []
+				},
+				{
+					"name": "create_schedule_version",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0f1f0f9a-d24f-4b5b-a0c3-b7ba663c5b6e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.globals.set(\"schedule_version\", pm.response.json().result.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"create_schedule_version\",\r\n    \"params\": {\r\n        \"schedule_id\": \"{{schedule_id}}\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						},
+						"description": "Создание версии план-графика"
+					},
+					"response": []
+				},
+				{
+					"name": "get_schedule_versions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e513eef-2703-4ce6-87e6-f3f7bd4f82c6",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches schedule version\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(pm.globals.get(\"schedule_version\"));\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"get_schedule_versions\",\r\n    \"params\": {\r\n      \"id\": \"{{schedule_id}}\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						},
+						"description": "Выдача версий плана-графика"
+					},
+					"response": []
+				},
+				{
+					"name": "create_schedule_version_position type category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43426edf-2c9f-4fef-933e-f070ac4eac10",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.globals.set(\"position_id\", pm.response.json().result.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"create_schedule_version_position\",\r\n    \"params\": {\r\n        \"schedule_version_id\": \"{{schedule_version}}\",\r\n        \"type\": \"category\",\r\n        \"month\": 0,\r\n        \"amount\": 20,\r\n        \"unit\": \"166\",\r\n        \"price\": 2000,\r\n        \"category_id\": \"1\",\r\n        \"currency\": \"USD\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						},
+						"description": "Создание позиции версии план-графика"
+					},
+					"response": []
+				},
+				{
+					"name": "update_schedule_version_position",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dc1dfab9-8686-45d8-9126-5e903cb591fd",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches Позиция обновлена\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Позиция обновлена\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"id\": 1,\r\n  \"method\": \"update_schedule_version_position\",\r\n  \"params\": {\r\n    \"schedule_version_id\": \"{{schedule_version}}\",\r\n    \"id\": \"{{position_id}}\",\r\n    \"month\": 0,\r\n    \"amount\": 15,\r\n    \"unit\": \"166\",\r\n    \"price\": 1500,\r\n    \"currency\": \"USD\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						},
+						"description": "Обновление позиции план-графика"
+					},
+					"response": []
+				},
+				{
+					"name": "get_schedule_version_info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6b502112-e2b4-4f6a-a293-525ed130d519",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"id equals to schedule_version\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.result.id).to.eql(pm.globals.get(\"schedule_version\"));\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"id\": 1,\r\n  \"method\": \"get_schedule_version_info\",\r\n  \"params\": {\r\n    \"id\": \"{{schedule_version}}\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						},
+						"description": "Получение версии план-графика"
+					},
+					"response": []
+				},
+				{
+					"name": "update_schedule_version",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f37e6394-96c5-42d1-8c1f-b68fd23bafb4",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches Версия плана-графика обновлена\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Версия плана-графика обновлена\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 12,\r\n    \"method\": \"update_schedule_version\",\r\n    \"params\": {\r\n        \"id\": \"{{schedule_version}}\",\r\n        \"basis\": \"План-график утверждён министром Прокофьевной Л.А. документом №121212 от 12.12.2019\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						},
+						"description": "Обновление версии плана графика"
+					},
+					"response": []
+				},
+				{
+					"name": "delete_schedule_version_position",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c3102bb1-68fc-4c88-819e-792a723ba25d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches Позиция удалена\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Позиция удалена\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"delete_schedule_version_position\",\r\n    \"params\": {\r\n        \"id\": \"{{position_id}}\",\r\n        \"schedule_version_id\": \"{{schedule_version}}\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						},
+						"description": "Удаление позиции версии план-графика"
+					},
+					"response": []
+				},
+				{
+					"name": "delete_schedule_version",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9c08d684-a0b6-42b0-a53d-3e65ad92b935",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches Версия плана-графика удалена\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Версия плана-графика удалена\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"delete_schedule_version\",\r\n    \"params\": {\r\n        \"id\": \"{{schedule_version}}\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						},
+						"description": "Удаление версии план-графика"
+					},
+					"response": []
+				},
+				{
+					"name": "delete_schedule",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f57552ec-257b-4770-892c-6334cab5a3db",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches План-график удалён\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"План-график удалён\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"delete_schedule\",\r\n  \"params\": {\r\n    \"id\": \"{{schedule_id}}\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						},
+						"description": "Удаления план график"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"event": [
@@ -3820,15 +4499,21 @@
 	],
 	"variable": [
 		{
-			"id": "1ac4a12e-a5f9-4a65-90be-e591c31c1059",
+			"id": "377f904e-8190-4bcb-88c7-9cfd877f60bc",
 			"key": "token",
 			"value": "",
 			"disabled": true
 		},
 		{
-			"id": "8c126b0d-e8b3-41f4-a263-3fb7cfbf3084",
+			"id": "2e00dd3a-23a3-4427-8cad-502cd2a0f42f",
 			"key": "domenTest",
 			"value": "http://api.test.tender.mf.uz"
+		},
+		{
+			"id": "e75af81d-2cde-4fc3-b871-f7bccf5b6bbd",
+			"key": "bleyd",
+			"value": "",
+			"disabled": true
 		}
 	],
 	"protocolProfileBehavior": {}
