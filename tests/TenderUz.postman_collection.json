@@ -3720,7 +3720,7 @@
 										"id": "9a2bb68b-d02c-407a-98ad-983396f3c761",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(500);\r",
+											"    pm.response.to.have.status(200);\r",
 											"});"
 										],
 										"type": "text/javascript"
@@ -4499,18 +4499,18 @@
 	],
 	"variable": [
 		{
-			"id": "54b6f630-d120-454b-b35d-d3a56fd39ebb",
+			"id": "ecd00afd-a441-455f-9ef5-b2ae79649999",
 			"key": "token",
 			"value": "",
 			"disabled": true
 		},
 		{
-			"id": "3a2a5c98-ea11-4817-aef7-794ab775d2c0",
+			"id": "7cd13f92-4de2-4d07-8cdd-07d28bc882a6",
 			"key": "domenTest",
 			"value": "http://api.test.tender.mf.uz"
 		},
 		{
-			"id": "a2476d2f-7902-4f6a-8abd-e3466d732a49",
+			"id": "62d14dc1-0cf1-49c3-bdf4-244a00fbaa06",
 			"key": "bleyd",
 			"value": "",
 			"disabled": true
