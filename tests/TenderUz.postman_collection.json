@@ -5000,18 +5000,18 @@
 	],
 	"variable": [
 		{
-			"id": "80c365e3-7a13-41f2-9727-de56249bc8e8",
+			"id": "3aa83104-6c7b-4fc5-a0e4-3d2f39631f38",
 			"key": "token",
 			"value": "",
 			"disabled": true
 		},
 		{
-			"id": "2331036c-420a-47f2-b2e0-a552c79d6cfe",
+			"id": "40afba1b-9d3d-46de-b6d2-acf039022e29",
 			"key": "domenTest",
-			"value": "http://api.test.tender.mf.uz"
+			"value": "http://api.demo.tender.mf.uz"
 		},
 		{
-			"id": "53a0ad1a-8405-46b3-968f-bab4daf830f8",
+			"id": "e543b121-3d1b-413b-95dd-f83e387cdb91",
 			"key": "bleyd",
 			"value": "",
 			"disabled": true
