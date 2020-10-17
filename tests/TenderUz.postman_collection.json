@@ -52,7 +52,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"azimovqobil72+1@gmail.com\",\r\n    \"password\": \"Qa13081995@\"\r\n}\r\n",
+									"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+8@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n",
 									"options": {
 										"raw": {}
 									}
@@ -4340,7 +4340,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"azimovqobil72+1@gmail.com\",\r\n    \"password\": \"Qa13081995@\"\r\n}\r\n"
+							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+8@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}"
 						},
 						"url": {
 							"raw": "{{domenTest}}/oauth/token",
@@ -5000,18 +5000,18 @@
 	],
 	"variable": [
 		{
-			"id": "f32a59ed-4d3d-4e75-8477-1f5612fbc005",
+			"id": "060bf9b6-daba-4e79-a010-c69f4274799a",
 			"key": "token",
 			"value": "",
 			"disabled": true
 		},
 		{
-			"id": "15bd6bad-ebb5-4143-b27f-19539c501580",
+			"id": "91cef85f-ce62-4797-82c5-d95ab693678a",
 			"key": "domenTest",
-			"value": "http://api.demo.tender.mf.uz"
+			"value": "http://api.test.tender.mf.uz"
 		},
 		{
-			"id": "5045edbd-730d-416a-b630-371105e0de32",
+			"id": "8a92ccda-0fd0-4de8-8d79-7f890bde4062",
 			"key": "bleyd",
 			"value": "",
 			"disabled": true
