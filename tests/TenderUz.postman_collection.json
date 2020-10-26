@@ -5304,18 +5304,18 @@
 	],
 	"variable": [
 		{
-			"id": "bb33fcb9-4269-4777-a29a-71a308d9fdaa",
+			"id": "ebe126ad-ddd0-4662-91e3-27b777bec6ba",
 			"key": "token",
 			"value": "",
 			"disabled": true
 		},
 		{
-			"id": "d641626e-7892-481b-adf6-a0eb97b529ef",
+			"id": "0afdc0a2-d1eb-47dd-9faa-e159f6af60cf",
 			"key": "domenTest",
-			"value": "http://api.test.tender.mf.uz"
+			"value": "http://192.168.122.1:4000"
 		},
 		{
-			"id": "4dd35f78-ede8-4af5-b307-15d30b863f4f",
+			"id": "059b05dd-1f95-4f6d-90fc-22401018a694",
 			"key": "bleyd",
 			"value": "",
 			"disabled": true
