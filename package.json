@@ -6,10 +6,11 @@
     "test": "tests"
   },
   "scripts": {
-    "run-test": "newman run tests/TenderUz.postman_collection.json"
+    "run-test": "newman run tests/TenderUz.postman_collection.json --reporters htmlextra --reporter-htmlextra-showOnlyFails --reporter-htmlextra-export ./report.html"
   },
   "author": "Rustam Abduraxmonov",
   "dependencies": {
-    "newman": "^5.2.0"
+    "newman": "^5.2.0",
+    "newman-reporter-htmlextra": "^1.19.4"
   }
 }
