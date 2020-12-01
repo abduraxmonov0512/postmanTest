@@ -52,7 +52,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+8@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n",
+									"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+5@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n",
 									"options": {
 										"raw": {}
 									}
@@ -486,7 +486,7 @@
 									"query": [
 										{
 											"key": "",
-											"value": null,
+											"value": "",
 											"disabled": true
 										}
 									]
@@ -746,7 +746,7 @@
 									"query": [
 										{
 											"key": "",
-											"value": null,
+											"value": "",
 											"disabled": true
 										}
 									]
@@ -2163,7 +2163,7 @@
 									"query": [
 										{
 											"key": "",
-											"value": null
+											"value": ""
 										}
 									]
 								}
@@ -2215,7 +2215,7 @@
 									"query": [
 										{
 											"key": "",
-											"value": null
+											"value": ""
 										}
 									]
 								}
@@ -2269,7 +2269,7 @@
 									"query": [
 										{
 											"key": "",
-											"value": null
+											"value": ""
 										}
 									]
 								}
@@ -2327,103 +2327,6 @@
 								}
 							},
 							"response": []
-						},
-						{
-							"name": "ref_bad_suppliers_read",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "8e13d24a-6ab3-47b3-904c-e496bb580a7a",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"code equals 300770790\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.result[0].code).to.eql(\"300770790\");\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"ref\",\r\n  \"params\": {\r\n    \"ref\": \"ref_bad_suppliers\",\r\n    \"op\": \"read\",\r\n    \"filters\": {\r\n      \"code\": \"300770790\"\r\n    }\r\n  }\r\n}",
-									"options": {
-										"raw": {}
-									}
-								},
-								"url": {
-									"raw": "{{domenTest}}/rpc",
-									"host": [
-										"{{domenTest}}"
-									],
-									"path": [
-										"rpc"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "ref_bad_suppliers_search",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "2f555ac3-72c1-4650-a514-1be1e597f473",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Body matches STROY\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"STROY\");\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"ref\",\r\n  \"params\": {\r\n    \"ref\": \"ref_bad_suppliers\",\r\n    \"op\": \"read\",\r\n    \"query\": \"STROY\"\r\n  }\r\n}",
-									"options": {
-										"raw": {}
-									}
-								},
-								"url": {
-									"raw": "{{domenTest}}/rpc",
-									"host": [
-										"{{domenTest}}"
-									],
-									"path": [
-										"rpc"
-									]
-								}
-							},
-							"response": []
 						}
 					],
 					"description": "Выдача записей по каталогу Справочник недобросовестных поставщик",
@@ -2462,7 +2365,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_area\",\r\n    \"params\": {\r\n        \"parent_id\": \"1.5.6\",\r\n        \"limit\": 4,\r\n        \"offset\": 3\r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_area\",\r\n    \"params\": {\r\n        \"parent_id\": \"1.5.6\",\r\n        \"limit\": 4,\r\n        \"offset\": 3\r\n    }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2545,8 +2451,8 @@
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Body matches Страна чудес\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"Страна чудес\");\r",
+											"pm.test(\"АЛБАНИЯ\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"АЛБАНИЯ\");\r",
 											"});"
 										],
 										"type": "text/javascript"
@@ -2564,7 +2470,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_country\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Страна чудес\"\r\n    }\r\n}",
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_country\",\r\n        \"op\": \"read\",\r\n        \"query\": \"АЛБАНИЯ\"\r\n    }\r\n}",
 									"options": {
 										"raw": {}
 									}
@@ -2669,7 +2575,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_single_supplier_directory\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Ўзтрансгаз\"\r\n    }\r\n}\r\n"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_single_supplier_directory\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Ўзтрансгаз\"\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2722,7 +2631,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_insurance\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 2\r\n        }\r\n    }\r\n}\r\n"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_insurance\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 2\r\n        }\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2767,7 +2679,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_insurance\",\r\n        \"op\": \"read\",\r\n        \"query\": \"застрахованы\"\r\n    }\r\n}\r\n"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_insurance\",\r\n        \"op\": \"read\",\r\n        \"query\": \"застрахованы\"\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2821,7 +2736,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_business\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 2\r\n        }\r\n    }\r\n}\r\n"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_business\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 2\r\n        }\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2866,7 +2784,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_business\",\r\n        \"op\": \"read\",\r\n        \"query\": \"резиденты\"\r\n    }\r\n}\r\n"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_business\",\r\n        \"op\": \"read\",\r\n        \"query\": \"резиденты\"\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2915,7 +2836,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_deposit\",\r\n        \"op\": \"read\"\r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_deposit\",\r\n        \"op\": \"read\"\r\n    }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2928,7 +2852,7 @@
 									"query": [
 										{
 											"key": "",
-											"value": null,
+											"value": "",
 											"disabled": true
 										}
 									]
@@ -2967,7 +2891,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_deposit\",\r\n        \"op\": \"read\",\r\n        \"query\": \"сумма\"\r\n    }\r\n}\r\n"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_deposit\",\r\n        \"op\": \"read\",\r\n        \"query\": \"сумма\"\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3021,7 +2948,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_periodicity\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 2\r\n        }\r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_periodicity\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 2\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3066,7 +2996,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_periodicity\",\r\n        \"op\": \"read\",\r\n        \"query\": \"поставка\"\r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_periodicity\",\r\n        \"op\": \"read\",\r\n        \"query\": \"поставка\"\r\n    }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3120,7 +3053,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_method_marks\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": \"rating\"\r\n        }\r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_method_marks\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": \"rating\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3165,7 +3101,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_method_marks\",\r\n        \"op\": \"read\",\r\n        \"query\": \"метод\"\r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_method_marks\",\r\n        \"op\": \"read\",\r\n        \"query\": \"метод\"\r\n    }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3241,7 +3180,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_status_error\",\r\n        \"op\": \"read\",\r\n        \"filters\": {\r\n          \"id\": \"done\"\r\n        }\r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_status_error\",\r\n        \"op\": \"read\",\r\n        \"filters\": {\r\n          \"id\": \"done\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3286,7 +3228,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_status_error\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Завершена\"\r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_status_error\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Завершена\"\r\n    }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3334,7 +3279,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_brokers\",\r\n        \"op\": \"read\"\r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_brokers\",\r\n        \"op\": \"read\"\r\n    }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3387,7 +3335,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_special_suppliers\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 1\r\n        }\r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_special_suppliers\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 1\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3432,7 +3383,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_special_suppliers\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Ўзбекистон\"\r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_special_suppliers\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Ўзбекистон\"\r\n    }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3480,7 +3434,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref_status_contest\",\r\n    \"params\": {\r\n        \"scope\": \"owner\"\r\n        \r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref_status_contest\",\r\n    \"params\": {\r\n        \"scope\": \"owner\"\r\n        \r\n    }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3521,7 +3478,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref_status_contest\",\r\n    \"params\": {\r\n        \"scope\": \"participant\"\r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref_status_contest\",\r\n    \"params\": {\r\n        \"scope\": \"participant\"\r\n    }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3562,7 +3522,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref_status_contest\",\r\n    \"params\": {\r\n        \"scope\": \"public\",\r\n        \"code\": \"cancel\"\r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref_status_contest\",\r\n    \"params\": {\r\n        \"scope\": \"public\",\r\n        \"code\": \"cancel\"\r\n    }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3610,7 +3573,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n      \"method\": \"ref_status\",\r\n    \"params\": {\r\n        \"scope\": \"public\"\r\n        \r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n      \"method\": \"ref_status\",\r\n    \"params\": {\r\n        \"scope\": \"public\"\r\n        \r\n    }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3651,7 +3617,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n      \"method\": \"ref_status\",\r\n    \"params\": {\r\n        \"scope\": \"owner\"\r\n        \r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n      \"method\": \"ref_status\",\r\n    \"params\": {\r\n        \"scope\": \"owner\"\r\n        \r\n    }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3692,7 +3661,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n      \"method\": \"ref_status\",\r\n    \"params\": {\r\n        \"scope\": \"participant\"\r\n        \r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n      \"method\": \"ref_status\",\r\n    \"params\": {\r\n        \"scope\": \"participant\"\r\n        \r\n    }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3740,7 +3712,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_unit\",\r\n        \"op\": \"read\"\r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_unit\",\r\n        \"op\": \"read\"\r\n    }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3788,7 +3763,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_billing_operations\",\r\n        \"op\": \"read\"\r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_billing_operations\",\r\n        \"op\": \"read\"\r\n    }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3846,7 +3824,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"create\",\r\n        \"data\": {\r\n          \"name\": \"postman\"\r\n        }\r\n    }\r\n}\r\n"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"create\",\r\n        \"data\": {\r\n          \"name\": \"postman\"\r\n        }\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3889,7 +3870,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"read\",\r\n        \"query\": \"postman\"\r\n    }\r\n}\r\n"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"read\",\r\n        \"query\": \"postman\"\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3936,7 +3920,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": \"{{categories_id}}\"\r\n        }\r\n    }\r\n}\r\n"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": \"{{categories_id}}\"\r\n        }\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3987,7 +3974,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"update\",\r\n        \"data\": {\r\n            \"id\": \"{{categories_id}}\",\r\n            \"name\": \"postman2\"\r\n        }\r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"update\",\r\n        \"data\": {\r\n            \"id\": \"{{categories_id}}\",\r\n            \"name\": \"postman2\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -4038,7 +4028,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"delete\",\r\n        \"data\":{\r\n          \"id\": \"{{categories_id}}\"\r\n        }\r\n    }\r\n}\r\n"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"delete\",\r\n        \"data\":{\r\n          \"id\": \"{{categories_id}}\"\r\n        }\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -4098,7 +4091,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_products\",\r\n        \"op\": \"create\",\r\n        \"data\": {\r\n          \"name\": \"postman\",\r\n          \"category_id\": \"{{categories_id}}\"\r\n        }\r\n    }\r\n}\r\n"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_products\",\r\n        \"op\": \"create\",\r\n        \"data\": {\r\n          \"name\": \"postman\",\r\n          \"category_id\": \"{{categories_id}}\"\r\n        }\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -4140,7 +4136,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{  \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_products\",\r\n        \"op\": \"read\",\r\n        \"query\": \"postman\"\r\n    }\r\n}\r\n"
+									"raw": "{  \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_products\",\r\n        \"op\": \"read\",\r\n        \"query\": \"postman\"\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -4185,7 +4184,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_products\",\r\n        \"op\": \"read\",\r\n        \"filters\": {\r\n          \"category_id\": \"{{categories_id}}\"\r\n        }\r\n    }\r\n}"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_products\",\r\n        \"op\": \"read\",\r\n        \"filters\": {\r\n          \"category_id\": \"{{categories_id}}\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -4236,7 +4238,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_products\",\r\n        \"op\": \"update\",\r\n        \"data\": {\r\n          \"name\": \"postman2\",\r\n          \"category_id\": \"{{categories_id}}\",\r\n          \"id\": \"{{product_id}}\"\r\n\r\n        }\r\n    }\r\n}\r\n"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_products\",\r\n        \"op\": \"update\",\r\n        \"data\": {\r\n          \"name\": \"postman2\",\r\n          \"category_id\": \"{{categories_id}}\",\r\n          \"id\": \"{{product_id}}\"\r\n\r\n        }\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -4287,7 +4292,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"ref\",\r\n  \"params\": {\r\n    \"ref\": \"ref_products\",\r\n        \"op\": \"delete\",\r\n    \"data\": {\r\n      \"id\": \"{{product_id}}\"\r\n    }\r\n  }\r\n}"
+									"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"ref\",\r\n  \"params\": {\r\n    \"ref\": \"ref_products\",\r\n        \"op\": \"delete\",\r\n    \"data\": {\r\n      \"id\": \"{{product_id}}\"\r\n    }\r\n  }\r\n}",
+									"options": {
+										"raw": {}
+									}
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -4340,7 +4348,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+8@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n"
+							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+5@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "{{domenTest}}/oauth/token",
@@ -4389,7 +4400,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"create_schedule\",\r\n    \"params\": {\r\n        \"year\": 2100\r\n    }\r\n}"
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"create_schedule\",\r\n    \"params\": {\r\n        \"year\": 2100\r\n    }\r\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -4440,7 +4454,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"get_schedules\",\r\n    \"params\": {}\r\n}"
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"get_schedules\",\r\n    \"params\": {}\r\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -4492,7 +4509,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 2,\r\n    \"method\": \"get_schedule_info\",\r\n    \"params\": {\r\n        \"id\": \"{{schedule_id}}\"\r\n    }\r\n}"
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 2,\r\n    \"method\": \"get_schedule_info\",\r\n    \"params\": {\r\n        \"id\": \"{{schedule_id}}\"\r\n    }\r\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -4505,7 +4525,7 @@
 							"query": [
 								{
 									"key": "",
-									"value": null,
+									"value": "",
 									"disabled": true
 								}
 							]
@@ -4548,7 +4568,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"create_schedule_version\",\r\n    \"params\": {\r\n        \"schedule_id\": \"{{schedule_id}}\"\r\n    }\r\n}"
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"create_schedule_version\",\r\n    \"params\": {\r\n        \"schedule_id\": \"{{schedule_id}}\"\r\n    }\r\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -4600,7 +4623,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"get_schedule_versions\",\r\n    \"params\": {\r\n      \"id\": \"{{schedule_id}}\"\r\n    }\r\n}"
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"get_schedule_versions\",\r\n    \"params\": {\r\n      \"id\": \"{{schedule_id}}\"\r\n    }\r\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -4649,7 +4675,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"create_schedule_version_position\",\r\n    \"params\": {\r\n        \"schedule_version_id\": \"{{schedule_version}}\",\r\n        \"type\": \"category\",\r\n        \"month\": 0,\r\n        \"amount\": 20,\r\n        \"unit\": \"166\",\r\n        \"price\": 2000,\r\n        \"category_id\": \"1\",\r\n        \"currency\": \"USD\"\r\n    }\r\n}"
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"create_schedule_version_position\",\r\n    \"params\": {\r\n        \"schedule_version_id\": \"{{schedule_version}}\",\r\n        \"type\": \"category\",\r\n        \"month\": 0,\r\n        \"amount\": 20,\r\n        \"unit\": \"166\",\r\n        \"price\": 2000,\r\n        \"category_id\": \"1\",\r\n        \"currency\": \"USD\"\r\n    }\r\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -4700,7 +4729,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"id\": 1,\r\n  \"method\": \"update_schedule_version_position\",\r\n  \"params\": {\r\n    \"schedule_version_id\": \"{{schedule_version}}\",\r\n    \"id\": \"{{position_id}}\",\r\n    \"month\": 0,\r\n    \"amount\": 15,\r\n    \"unit\": \"166\",\r\n    \"price\": 1500,\r\n    \"currency\": \"USD\"\r\n  }\r\n}"
+							"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"id\": 1,\r\n  \"method\": \"update_schedule_version_position\",\r\n  \"params\": {\r\n    \"schedule_version_id\": \"{{schedule_version}}\",\r\n    \"id\": \"{{position_id}}\",\r\n    \"month\": 0,\r\n    \"amount\": 15,\r\n    \"unit\": \"166\",\r\n    \"price\": 1500,\r\n    \"currency\": \"USD\"\r\n  }\r\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -4753,7 +4785,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"id\": 1,\r\n  \"method\": \"get_schedule_version_info\",\r\n  \"params\": {\r\n    \"id\": \"{{schedule_version}}\"\r\n  }\r\n}"
+							"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"id\": 1,\r\n  \"method\": \"get_schedule_version_info\",\r\n  \"params\": {\r\n    \"id\": \"{{schedule_version}}\"\r\n  }\r\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -4804,7 +4839,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 12,\r\n    \"method\": \"update_schedule_version\",\r\n    \"params\": {\r\n        \"id\": \"{{schedule_version}}\",\r\n        \"basis\": \"План-график утверждён министром Прокофьевной Л.А. документом №121212 от 12.12.2019\"\r\n    }\r\n}"
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 12,\r\n    \"method\": \"update_schedule_version\",\r\n    \"params\": {\r\n        \"id\": \"{{schedule_version}}\",\r\n        \"basis\": \"План-график утверждён министром Прокофьевной Л.А. документом №121212 от 12.12.2019\"\r\n    }\r\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -4855,7 +4893,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"delete_schedule_version_position\",\r\n    \"params\": {\r\n        \"id\": \"{{position_id}}\",\r\n        \"schedule_version_id\": \"{{schedule_version}}\"\r\n    }\r\n}"
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"delete_schedule_version_position\",\r\n    \"params\": {\r\n        \"id\": \"{{position_id}}\",\r\n        \"schedule_version_id\": \"{{schedule_version}}\"\r\n    }\r\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -4906,7 +4947,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"delete_schedule_version\",\r\n    \"params\": {\r\n        \"id\": \"{{schedule_version}}\"\r\n    }\r\n}"
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"delete_schedule_version\",\r\n    \"params\": {\r\n        \"id\": \"{{schedule_version}}\"\r\n    }\r\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -4957,7 +5001,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"delete_schedule\",\r\n  \"params\": {\r\n    \"id\": \"{{schedule_id}}\"\r\n  }\r\n}"
+							"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"delete_schedule\",\r\n  \"params\": {\r\n    \"id\": \"{{schedule_id}}\"\r\n  }\r\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -4971,310 +5018,6 @@
 						"description": "Удаления план график"
 					},
 					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "features_procedures",
-			"item": [
-				{
-					"name": "create_feature",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "087c76f0-e184-4120-8eeb-2aa18711cdf2",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "a149b024-49c1-4665-ad87-7e8370711066",
-								"exec": [
-									"pm.globals.set(\"random_number\", _.random(1,1000000));"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "username",
-									"value": "d19repadm72",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "qwe123",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{domenTest}}/utils/feature/create?feature={\n  \"qa_test{{random_number}}\": {\n    \"enable\": false,\n    \"description\": \"Описание\",\n    \"requires\": []\n  }\n}\n",
-							"host": [
-								"{{domenTest}}"
-							],
-							"path": [
-								"utils",
-								"feature",
-								"create"
-							],
-							"query": [
-								{
-									"key": "feature",
-									"value": "{\n  \"qa_test{{random_number}}\": {\n    \"enable\": false,\n    \"description\": \"Описание\",\n    \"requires\": []\n  }\n}\n"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get_features",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "c4191821-6148-4020-8036-e8bf9f684183",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Body matches qa_test\"+ pm.globals.get(\"random_number\"), function () {\r",
-									"    pm.expect(pm.response.text()).to.include(pm.globals.get(\"random_number\"));\r",
-									"\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"params\": {},\r\n  \"method\": \"get_features\",\r\n  \"jsonrpc\": \"2.0\"\r\n}"
-						},
-						"url": {
-							"raw": "{{domenTest}}/rpc",
-							"host": [
-								"{{domenTest}}"
-							],
-							"path": [
-								"rpc"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "change_feature_status",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "4d1c7a5b-0485-4cc5-a99c-4f44bb6634e7",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "username",
-									"value": "d19repadm72",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "qwe123",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{domenTest}}//utils/feature/change/qa_test{{random_number}}",
-							"host": [
-								"{{domenTest}}"
-							],
-							"path": [
-								"",
-								"utils",
-								"feature",
-								"change",
-								"qa_test{{random_number}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get_features_test_status",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "a643bf7c-8259-4b0f-a886-295a73a82928",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Body matches qa_test\"+ pm.globals.get(\"random_number\"), function () {\r",
-									"    pm.expect(pm.response.text()).to.include(pm.globals.get(\"random_number\"));\r",
-									"\r",
-									"});\r",
-									"\r",
-									"pm.test(\"check change status\", function () {\r",
-									"    let feature =  pm.globals.get(\"random_number\");\r",
-									"    let argument = \"qa_test\" + feature; \r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.result[argument].enable).to.eql(true);\r",
-									"\r",
-									"});\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"params\": {},\r\n  \"method\": \"get_features\",\r\n  \"jsonrpc\": \"2.0\"\r\n}"
-						},
-						"url": {
-							"raw": "{{domenTest}}/rpc",
-							"host": [
-								"{{domenTest}}"
-							],
-							"path": [
-								"rpc"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "delete_feature",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "960577c7-cdea-4c6e-91e4-9518561c0266",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"delete_features\",\r\n    \"params\": {\r\n        \"features\": [\r\n            \"qa_test{{random_number}}\"\r\n        ]\r\n    }\r\n}"
-						},
-						"url": {
-							"raw": "{{domenTest}}/rpc",
-							"host": [
-								"{{domenTest}}"
-							],
-							"path": [
-								"rpc"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "67ef548d-2169-4840-8340-0c4c861ddf90",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"id": "807e5dbb-f9ae-41db-806b-09c5d2515af2",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -5304,18 +5047,18 @@
 	],
 	"variable": [
 		{
-			"id": "ebe126ad-ddd0-4662-91e3-27b777bec6ba",
+			"id": "d3cef859-0130-40ec-8624-d82ca9493a46",
 			"key": "token",
 			"value": "",
 			"disabled": true
 		},
 		{
-			"id": "0afdc0a2-d1eb-47dd-9faa-e159f6af60cf",
+			"id": "0811b8ea-552f-4cf9-8d71-9b96bc163a5b",
 			"key": "domenTest",
 			"value": "http://192.168.122.1:4000"
 		},
 		{
-			"id": "059b05dd-1f95-4f6d-90fc-22401018a694",
+			"id": "ca6252e6-dd8f-44fe-993a-9b6b85128e7b",
 			"key": "bleyd",
 			"value": "",
 			"disabled": true
