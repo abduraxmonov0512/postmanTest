@@ -4312,6 +4312,252 @@
 					],
 					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
+				},
+				{
+					"name": "ref_procedures_em",
+					"item": [
+						{
+							"name": "ref_procedures_em",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "032be558-f74f-4535-a74c-4b3924330ace",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_online_shop_public\",\r\n        \"op\": \"read\",\r\n        \"limit\": 6,\r\n        \"offset\": 0,\r\n        \"filters\": {}\r\n    }\r\n}"
+								},
+								"url": {
+									"raw": "{{domenTest}}/rpc",
+									"host": [
+										"{{domenTest}}"
+									],
+									"path": [
+										"rpc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ref_procedures_em_with_filter_region",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "3de26d10-b09b-440e-a10d-d7195d5d792a",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"testing restr EM with filter region\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    for(let i = 0; i < jsonData.result.length; i++){ \r",
+											"        pm.expect(jsonData.result[i].delivery_regions[0]).to.be.oneOf([\"33\", \"33.2152\"]);\r",
+											"    }\r",
+											" \r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_online_shop_public\",\r\n        \"op\": \"read\",\r\n        \"limit\": 10,\r\n        \"offset\": 0,\r\n        \"filters\": {\r\n            \"delivery_regions\": [\r\n                \"33.2152\"\r\n            ]\r\n        }\r\n    }\r\n}"
+								},
+								"url": {
+									"raw": "{{domenTest}}/rpc",
+									"host": [
+										"{{domenTest}}"
+									],
+									"path": [
+										"rpc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ref_procedures_em_with_full_filter",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d61cd223-b57b-4f1d-8f23-c1f6e862e48c",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"testing restr EM with full filter\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    for(let i = 0; i < jsonData.result.length; i++){ \r",
+											"        pm.expect(jsonData.result[i].delivery_regions[0]).to.be.oneOf([\"33\", \"33.2152\"]);\r",
+											"        pm.expect(jsonData.result[i].__debug__.category_id).to.equal(\"061c37f0-55d0-466e-95dd-ad304da0fad5\");\r",
+											"        pm.expect(jsonData.result[i].__debug__.product_id).to.equal(\"1530e847-d493-44aa-820e-dc9549f1b8d6\");\r",
+											"    }\r",
+											"    \r",
+											"    \r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_online_shop_public\",\r\n        \"op\": \"read\",\r\n        \"limit\": 10,\r\n        \"offset\": 0,\r\n        \"filters\": {\r\n            \"category_id\": \"061c37f0-55d0-466e-95dd-ad304da0fad5\",\r\n            \"product_id\": \"1530e847-d493-44aa-820e-dc9549f1b8d6\",\r\n            \"country\": [\r\n                \"031\"\r\n            ],\r\n            \"max_price\": 10000000,\r\n            \"min_amount\": 1,\r\n            \"max_amount\": 1000,\r\n            \"delivery_regions\": [\r\n                \"33.2152\"\r\n            ]\r\n        }\r\n    }\r\n}"
+								},
+								"url": {
+									"raw": "{{domenTest}}/rpc",
+									"host": [
+										"{{domenTest}}"
+									],
+									"path": [
+										"rpc"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "ref_faqs",
+					"item": [
+						{
+							"name": "ref_faqs",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c478b1ef-ca59-44e7-9315-eae928dd6407",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"common_ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_faqs\",\r\n        \"op\": \"read\",\r\n        \"limit\": 51,\r\n        \"offset\": 0,\r\n        \"filters\": {\r\n            \"locale\": \"ru\",\r\n            \"show\": true\r\n        }\r\n    }\r\n}"
+								},
+								"url": {
+									"raw": "{{domenTest}}/rpc",
+									"host": [
+										"{{domenTest}}"
+									],
+									"path": [
+										"rpc"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "get_current_time",
+					"item": [
+						{
+							"name": "get_current_time",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6ee097ed-dbe2-4d4f-8bdd-5f40a1bd01b8",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"get_current_time\",\r\n    \"params\": {}\r\n}"
+								},
+								"url": {
+									"raw": "{{domenTest}}/rpc",
+									"host": [
+										"{{domenTest}}"
+									],
+									"path": [
+										"rpc"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -5047,18 +5293,18 @@
 	],
 	"variable": [
 		{
-			"id": "d3cef859-0130-40ec-8624-d82ca9493a46",
+			"id": "6975e9e4-a23d-43b8-9706-81147369093a",
 			"key": "token",
 			"value": "",
 			"disabled": true
 		},
 		{
-			"id": "0811b8ea-552f-4cf9-8d71-9b96bc163a5b",
+			"id": "621a7387-bc08-47bd-9483-54029ee47a86",
 			"key": "domenTest",
 			"value": "http://192.168.122.1:4000"
 		},
 		{
-			"id": "ca6252e6-dd8f-44fe-993a-9b6b85128e7b",
+			"id": "d6d10c62-a2d1-4ac9-b0c6-85117cb72575",
 			"key": "bleyd",
 			"value": "",
 			"disabled": true
