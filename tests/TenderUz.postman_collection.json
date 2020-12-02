@@ -4526,7 +4526,7 @@
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
-											"\r",
+											"const moment = require('moment');\r",
 											"pm.test(\"Your test name\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"     pm.expect(jsonData.result).to.include(moment().format(\"YYYY-MM-DDTHH:MM:SSZ\"));\r",
@@ -5347,18 +5347,18 @@
 	],
 	"variable": [
 		{
-			"id": "f8d74daf-17b0-41cf-aadb-e0b052d86500",
+			"id": "83fa86e9-9bc4-4ead-a7cd-46fc28782edc",
 			"key": "token",
 			"value": "",
 			"disabled": true
 		},
 		{
-			"id": "bfab4147-9803-4328-9801-55a452107d9f",
+			"id": "23509e77-4f5c-4f64-8b79-3f5503f7f281",
 			"key": "domenTest",
 			"value": "http://192.168.122.1:4000"
 		},
 		{
-			"id": "27813d5a-af58-47c5-b982-c9d34f518d59",
+			"id": "d7f49ffa-efd4-4546-833f-ba0f59cbe1be",
 			"key": "bleyd",
 			"value": "",
 			"disabled": true
