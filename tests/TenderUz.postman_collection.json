@@ -4520,7 +4520,61 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "6ee097ed-dbe2-4d4f-8bdd-5f40a1bd01b8",
+										"id": "dc812521-1718-47c9-a525-a3d2eabe6f5d",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"Your test name\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"     pm.expect(jsonData.result).to.include(moment().format(\"YYYY-MM-DDTHH:MM:SSZ\"));\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"get_current_time\",\r\n    \"params\": {}\r\n}"
+								},
+								"url": {
+									"raw": "{{domenTest}}/rpc",
+									"host": [
+										"{{domenTest}}"
+									],
+									"path": [
+										"rpc"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "get_activity_stats",
+					"item": [
+						{
+							"name": "get_activity_stats",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f3f3c388-96eb-4670-8690-b5b4a4120ff1",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -4541,7 +4595,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"get_current_time\",\r\n    \"params\": {}\r\n}"
+									"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"get_activity_stats\",\r\n    \"params\": {}\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -5293,18 +5347,18 @@
 	],
 	"variable": [
 		{
-			"id": "6975e9e4-a23d-43b8-9706-81147369093a",
+			"id": "f8d74daf-17b0-41cf-aadb-e0b052d86500",
 			"key": "token",
 			"value": "",
 			"disabled": true
 		},
 		{
-			"id": "621a7387-bc08-47bd-9483-54029ee47a86",
+			"id": "bfab4147-9803-4328-9801-55a452107d9f",
 			"key": "domenTest",
 			"value": "http://192.168.122.1:4000"
 		},
 		{
-			"id": "d6d10c62-a2d1-4ac9-b0c6-85117cb72575",
+			"id": "27813d5a-af58-47c5-b982-c9d34f518d59",
 			"key": "bleyd",
 			"value": "",
 			"disabled": true
