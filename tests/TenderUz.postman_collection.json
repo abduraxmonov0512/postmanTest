@@ -4608,6 +4608,158 @@
 					],
 					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
+				},
+				{
+					"name": "tree_products",
+					"item": [
+						{
+							"name": "tree_products",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d928e20a-b16e-4c9f-905c-01a853051490",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"tree_products\",\r\n    \"params\": {\r\n        \"parent_id\": \"0\",\r\n        \"limit\": 51,\r\n        \"offset\": 0\r\n    }\r\n}"
+								},
+								"url": {
+									"raw": "{{domenTest}}/rpc",
+									"host": [
+										"{{domenTest}}"
+									],
+									"path": [
+										"rpc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "tree_products_with_parent_id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "94c4d3e8-4d7d-4138-9cef-4af6bee5b467",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"id must have parent id\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"0.24dca85a-2b2d-4b1b-9fa8-980f848a5cde\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"tree_products\",\r\n    \"params\": {\r\n        \"parent_id\": \"0.24dca85a-2b2d-4b1b-9fa8-980f848a5cde\",\r\n        \"limit\": 51,\r\n        \"offset\": 0\r\n    }\r\n}"
+								},
+								"url": {
+									"raw": "http://api.test.tender.mf.uz/rpc",
+									"protocol": "http",
+									"host": [
+										"api",
+										"test",
+										"tender",
+										"mf",
+										"uz"
+									],
+									"path": [
+										"rpc"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "ref_reduction_object_public",
+					"item": [
+						{
+							"name": "ref_reduction_object_public",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "92f8462b-e5c0-48e7-a71e-6723c40cb35a",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_reduction_object_public\",\r\n        \"limit\": 51,\r\n        \"offset\": 0,\r\n        \"filters\": {},\r\n        \"op\": \"read\"\r\n    }\r\n}"
+								},
+								"url": {
+									"raw": "{{domenTest}}/rpc",
+									"host": [
+										"{{domenTest}}"
+									],
+									"path": [
+										"rpc"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -5317,6 +5469,365 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Auction",
+			"item": [
+				{
+					"name": "authorization",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a8eac62d-e48c-47be-92f8-ed332b049474",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.globals.set(\"token\", pm.response.json().access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+5@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{domenTest}}/oauth/token",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_auction",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d03d1d51-2c83-4ae8-a6a4-9bf6106af3a9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"create_procedure\",\r\n    \"params\": {\r\n        \"type\": \"reduction\",\r\n        \"tmpl\": \"reduction_v2\",\r\n        \"clearing_off\": true,\r\n        \"sign_off\": true,\r\n        \"hidden\": false,\r\n        \"readonly\": false,\r\n        \"object\": [\r\n            {\r\n                \"type\": \"items\",\r\n                \"data\": {\r\n                    \"product_id\": \"7ebb2f7e-7a23-47a9-828f-2ef981a0a91c\",\r\n                    \"unit\": \"sht\",\r\n                    \"currency\": \"UZS\",\r\n                    \"amount\": 10,\r\n                    \"price\": 100\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/urpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"urpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ref_status_reduction",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "97a7a7b2-3d06-4230-8873-b404d7a3e785",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_status_reduction\",\r\n        \"limit\": 51,\r\n        \"offset\": 0,\r\n        \"filters\": {\r\n            \"scope\": \"private\"\r\n        },\r\n        \"op\": \"read\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ref_reduction_object",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "76ec69c8-7631-42cc-90d2-ac4afd5d45e4",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_reduction_object\",\r\n        \"limit\": 51,\r\n        \"offset\": 0,\r\n        \"filters\": {},\r\n        \"op\": \"read\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ref_reduction_object_moderated",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ccfee5d7-699c-499d-925f-893f80e79bb7",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_reduction_object\",\r\n        \"limit\": 51,\r\n        \"offset\": 0,\r\n        \"filters\": {\r\n            \"relation\": \"moderator\",\r\n            \"status\": \"moderated\"\r\n        },\r\n        \"op\": \"read\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ref_reduction_object_rejected",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d44d2f6d-6c2f-43b2-a819-4b8b6c92e0b9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_reduction_object\",\r\n        \"limit\": 51,\r\n        \"offset\": 0,\r\n        \"filters\": {\r\n            \"relation\": \"moderator\",\r\n            \"status\": \"rejected\"\r\n        },\r\n        \"op\": \"read\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ref_reduction_object_publicated",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c0e1fb25-6604-466d-a2b9-867a39fc9528",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_reduction_object\",\r\n        \"limit\": 51,\r\n        \"offset\": 0,\r\n        \"filters\": {\r\n            \"relation\": \"moderator\",\r\n            \"status\": \"publicated\"\r\n        },\r\n        \"op\": \"read\"\r\n    }\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"event": [
@@ -5343,18 +5854,18 @@
 	],
 	"variable": [
 		{
-			"id": "9faed7da-65c1-4970-868c-45224137aaed",
+			"id": "8dcd7d11-56d5-4269-a6bb-be09e202d661",
 			"key": "token",
 			"value": "",
 			"disabled": true
 		},
 		{
-			"id": "0d86a93d-f5b8-472a-8204-ef0f6fe97608",
+			"id": "fe474abc-4c1e-43a2-9800-5a5027627fe8",
 			"key": "domenTest",
 			"value": "http://192.168.122.1:4000"
 		},
 		{
-			"id": "af96659d-53e7-41bf-8ba6-fab6d9dba756",
+			"id": "bf87f2ea-e83e-45a7-8131-b2868f894516",
 			"key": "bleyd",
 			"value": "",
 			"disabled": true
