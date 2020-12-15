@@ -4848,7 +4848,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"create_schedule\",\r\n    \"params\": {\r\n        \"year\": 2100\r\n    }\r\n}",
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"create_schedule\",\r\n    \"params\": {\r\n        \"year\": 2200\r\n    }\r\n}",
 							"options": {
 								"raw": {}
 							}
@@ -4879,7 +4879,7 @@
 									"});\r",
 									"\r",
 									"pm.test(\"Body matches 2100\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"2100\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"2200\");\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -6155,18 +6155,18 @@
 	],
 	"variable": [
 		{
-			"id": "43e0b48a-d457-4c44-a334-d2b7e5c58f90",
+			"id": "89fc5804-a502-44ae-93cc-1b0ac8a244c8",
 			"key": "token",
 			"value": "",
 			"disabled": true
 		},
 		{
-			"id": "810524f3-6534-4ec2-a605-1dc988a6cfa3",
+			"id": "4654dbb7-ffa0-4bb5-bdf9-7c980e494abb",
 			"key": "domenTest",
 			"value": "http://192.168.122.1:4000"
 		},
 		{
-			"id": "8fd7799d-4c11-4501-a4ff-6f6ac7c57f7b",
+			"id": "c2341c75-e0b5-4fe4-b64d-ba3d8812a399",
 			"key": "bleyd",
 			"value": "",
 			"disabled": true
