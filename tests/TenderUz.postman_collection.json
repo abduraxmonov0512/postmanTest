@@ -5828,6 +5828,307 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ref_filter_DSL",
+			"item": [
+				{
+					"name": "authorization",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8e85c2af-a5ff-4e6f-9326-74a804421d5e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.globals.set(\"token\", pm.response.json().access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+5@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{domenTest}}/oauth/token",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "case_1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3d9f65a3-c4a2-4e3f-b7c5-d85ddd1eafe4",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status equals to wait_winner_sign id less 1851 great than 1864\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    var flag = false;\r",
+									"     for(let i = 0; i < jsonData.result.length; i++ ){\r",
+									"        console.log(jsonData.result[i].id);\r",
+									"        if(!(jsonData.result[i].status == \"wait_winner_sign\" &&  ((jsonData.result[i].id <= 1864) && jsonData.result[i].id > 1851))){\r",
+									"            flag = true;\r",
+									"        }\r",
+									"        pm.expect(flag).equal(true);\r",
+									"    }\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"jsonrpc\": \"2.0\",\r\n\t\"method\": \"contract_ref\",\r\n\t\"params\": {\r\n\t\t\"ref\": \"contract_private_registry\",\r\n\t\t\"op\": \"read\",\r\n\t\t\"filter_query\": {\r\n\t\t\t\"$NOT\": {\r\n                \"$AND\":{\r\n                    \"id\": {\"$AND\": {\"$GT\": 1851, \"$LTE\": 1864}},\r\n\t\t\t    \t\"status\": {\"$EQ\": \"wait_winner_sign\"}\r\n                }\r\n\t\t\t\t\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "case_2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9d200c14-06ca-4f51-984d-0a10ff9c0026",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    for(let i = 0; i < jsonData.result.length; i++ ){\r",
+									"        console.log(jsonData.result[i].status);\r",
+									"        pm.expect(jsonData.result[i].status).to.not.equal(\"wait_winner_sign\");\r",
+									"    }\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"jsonrpc\": \"2.0\",\r\n\t\"method\": \"contract_ref\",\r\n\t\"params\": {\r\n\t\t\"ref\": \"contract_private_registry\",\r\n\t\t\"op\": \"read\",\r\n\t\t\"filter_query\": {\r\n\t\t\t\"$NOT\": {\r\n                \"$AND\":{\r\n\t\t\t    \t\"status\": {\"$EQ\": \"wait_winner_sign\"}\r\n                }\r\n\t\t\t\t\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "case_3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "13600b86-0f6b-4eec-93cc-2cb7be8d04e4",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    for(let i = 0; i < jsonData.result.length; i++ ){\r",
+									"        \r",
+									"       pm.expect(jsonData.result[i].status).to.equal(\"wait_winner_sign\");\r",
+									"       pm.expect(jsonData.result[i].id).to.be.above(1851).and.to.be.below(1865);\r",
+									"    }\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"jsonrpc\": \"2.0\",\r\n\t\"method\": \"contract_ref\",\r\n\t\"params\": {\r\n\t\t\"ref\": \"contract_private_registry\",\r\n\t\t\"op\": \"read\",\r\n\t\t\"filter_query\": {\r\n\t\t\t\"$AND\":{\r\n                    \"id\": {\"$AND\": {\"$GT\": 1851, \"$LTE\": 1864}},\r\n\t\t\t    \t\"status\": {\"$EQ\": \"wait_winner_sign\"}\r\n                }\r\n\t\t}\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "case_4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ddf4565b-6f5f-494d-8e2c-cb3cd3f75019",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status equals to wait_winner_sign id less 1851 great than 1864\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    var flag = false;\r",
+									"     for(let i = 0; i < jsonData.result.length; i++ ){\r",
+									"        console.log(jsonData.result[i].id);\r",
+									"        if(!(jsonData.result[i].status == \"org_rejected\" ||  ((jsonData.result[i].id <= 1864) && jsonData.result[i].id > 1851))){\r",
+									"            flag = true;\r",
+									"        }\r",
+									"        pm.expect(flag).equal(true);\r",
+									"    }\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"jsonrpc\": \"2.0\",\r\n\t\"method\": \"contract_ref\",\r\n\t\"params\": {\r\n\t\t\"ref\": \"contract_private_registry\",\r\n\t\t\"op\": \"read\",\r\n\t\t\"filter_query\": {\r\n\t\t\t\"$NOT\": {\r\n                \"$OR\":{\r\n                    \"id\": {\"$AND\": {\"$GT\": 1851, \"$LTE\": 1864}},\r\n\t\t\t    \t\"status\": {\"$EQ\": \"org_rejected\"}\r\n                }\r\n\t\t\t\t\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"event": [
@@ -5854,18 +6155,18 @@
 	],
 	"variable": [
 		{
-			"id": "8dcd7d11-56d5-4269-a6bb-be09e202d661",
+			"id": "43e0b48a-d457-4c44-a334-d2b7e5c58f90",
 			"key": "token",
 			"value": "",
 			"disabled": true
 		},
 		{
-			"id": "fe474abc-4c1e-43a2-9800-5a5027627fe8",
+			"id": "810524f3-6534-4ec2-a605-1dc988a6cfa3",
 			"key": "domenTest",
 			"value": "http://192.168.122.1:4000"
 		},
 		{
-			"id": "bf87f2ea-e83e-45a7-8131-b2868f894516",
+			"id": "8fd7799d-4c11-4501-a4ff-6f6ac7c57f7b",
 			"key": "bleyd",
 			"value": "",
 			"disabled": true
