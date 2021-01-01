@@ -17,7 +17,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "41f33c55-5134-49ea-8107-52547d72fda9",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -33,7 +32,6 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "59589a5a-d23b-42cb-ae4d-684c03a42d6c",
 										"exec": [
 											""
 										],
@@ -52,10 +50,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+5@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"xaridtest+1@gmail.com\",\r\n    \"password\": \"Xarid123!\"\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/oauth/token",
@@ -71,9 +66,7 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "ref_country",
@@ -84,7 +77,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "865a3c72-30c1-4f1c-92c9-c6aad27ecaf8",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -105,10 +97,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_country\",\r\n    \"params\": {}\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_country\",\r\n    \"params\": {}\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -123,9 +112,7 @@
 							"response": []
 						}
 					],
-					"description": "Выдача записей по каталогу ОКСМ",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Выдача записей по каталогу ОКСМ"
 				},
 				{
 					"name": "ref_customs_fee",
@@ -137,10 +124,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_customs_fee\",\r\n    \"params\": {\r\n    }\r\n} ",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_customs_fee\",\r\n    \"params\": {\r\n    }\r\n} "
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -155,9 +139,7 @@
 							"response": []
 						}
 					],
-					"description": "Выдача записей по каталогу Классификатор таможенных платеже",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Выдача записей по каталогу Классификатор таможенных платеже"
 				},
 				{
 					"name": "ref_transaction_nature",
@@ -168,7 +150,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "c4876e7f-ed1b-4e60-9ac5-0c2a634d34bc",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -194,10 +175,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_transaction_nature\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\":2\r\n        }\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_transaction_nature\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\":2\r\n        }\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -224,10 +202,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_transaction_nature\",\r\n        \"op\": \"read\",\r\n        \"query\": \"товаров\"\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_transaction_nature\",\r\n        \"op\": \"read\",\r\n        \"query\": \"товаров\"\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -241,9 +216,7 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "ref_transport",
@@ -254,7 +227,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "d0757242-93b6-4b20-8d49-f462b009106e",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -275,10 +247,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_transport\",\r\n    \"params\": {\r\n        \r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_transport\",\r\n        \"op\": \"read\"\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -293,61 +262,7 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "ref_customs_post",
-					"item": [
-						{
-							"name": "ref_customs_post",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "58abaee9-87de-40d5-beb4-6dbe8511cd6a",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_customs_post\",\r\n    \"params\": {}\r\n}",
-									"options": {
-										"raw": {}
-									}
-								},
-								"url": {
-									"raw": "{{domenTest}}/rpc",
-									"host": [
-										"{{domenTest}}"
-									],
-									"path": [
-										"rpc"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"description": "Выдача записей по каталогу Классификатор таможенных постов",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "ref_company_type",
@@ -365,10 +280,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_company_type\",\r\n    \"params\": {}\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_company_type\",\r\n    \"params\": {}\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -383,9 +295,7 @@
 							"response": []
 						}
 					],
-					"description": "Выдача записей по каталогу КОПФ",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Выдача записей по каталогу КОПФ"
 				},
 				{
 					"name": "ref_tnved",
@@ -396,7 +306,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "a58c8762-8235-40ad-bcc8-c61f793f60cf",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -422,10 +331,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_tnved\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 2\r\n        }\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_tnved\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 2\r\n        }\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -445,7 +351,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "bd27bdde-1587-4103-9091-3022375bfa83",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -470,10 +375,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_tnved\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Продукты\"\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_tnved\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Продукты\"\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -495,9 +397,7 @@
 							"response": []
 						}
 					],
-					"description": "Выдача записей по каталогу ТН ВЕД",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Выдача записей по каталогу ТН ВЕД"
 				},
 				{
 					"name": "ref_economic_acivity_type",
@@ -508,7 +408,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "8caddb73-5712-4a9e-8188-1763c61fdf5c",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -529,10 +428,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_economic_acivity_type\",\r\n    \"params\": {\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_economic_acivity_type\",\r\n        \"op\": \"read\"\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -552,7 +448,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "d646abd1-744e-4b95-95c8-a0b83e9fa474",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -578,10 +473,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_economic_acivity_type\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 2\r\n        }\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_economic_acivity_type\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 2\r\n        }\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -601,7 +493,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "51c98b5c-7059-45b6-aa60-a66921878354",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -626,10 +517,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_economic_acivity_type\",\r\n        \"op\": \"read\",\r\n        \"query\": \"прочих\"\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_economic_acivity_type\",\r\n        \"op\": \"read\",\r\n        \"query\": \"прочих\"\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -644,9 +532,7 @@
 							"response": []
 						}
 					],
-					"description": "Выдача записей по каталогу ОКЭД-2",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Выдача записей по каталогу ОКЭД-2"
 				},
 				{
 					"name": "ref_team_status",
@@ -657,7 +543,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "c26801c2-0cec-40fd-90aa-63d562653056",
 										"exec": [
 											"pm.test(\"Response time is less than 200ms\", function () {\r",
 											"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
@@ -678,10 +563,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_team_status\",\r\n    \"params\": {}\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_team_status\",\r\n    \"params\": {}\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -696,9 +578,7 @@
 							"response": []
 						}
 					],
-					"description": "Справочник статусов компаний",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Справочник статусов компаний"
 				},
 				{
 					"name": "ref_dest",
@@ -709,7 +589,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "4e5c14a5-9d03-44b3-aeb7-bd0c3523c0db",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -730,10 +609,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\": 12,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref_dest\",\r\n    \"params\": {}\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"id\": 12,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref_dest\",\r\n    \"params\": {}\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -755,9 +631,7 @@
 							"response": []
 						}
 					],
-					"description": "Справочник направлений",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Справочник направлений"
 				},
 				{
 					"name": "ref_locale",
@@ -775,10 +649,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\": 12,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref_locale\",\r\n    \"params\": {}\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"id\": 12,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref_locale\",\r\n    \"params\": {}\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -793,9 +664,7 @@
 							"response": []
 						}
 					],
-					"description": "Справочник локалей",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Справочник локалей"
 				},
 				{
 					"name": "ref_unit",
@@ -806,7 +675,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "6381f14c-8b77-413e-932c-5744f926663f",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -827,10 +695,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_unit\",\r\n        \"op\": \"read\"\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_unit\",\r\n        \"op\": \"read\"\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -850,7 +715,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "bad3bb71-5332-46a9-a6f1-2483b0e70487",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -860,16 +724,13 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0629aa22-9288-41bf-b7bd-eeb1bd77d8a8",
 								"type": "text/javascript",
 								"exec": [
 									""
 								]
 							}
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "ref_currency",
@@ -880,7 +741,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "05188d74-b7de-478e-8eea-f49788a905c1",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -901,10 +761,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\": 12,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref_currency\",\r\n    \"params\": {}\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"id\": 12,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref_currency\",\r\n    \"params\": {}\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -924,7 +781,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "7a4356cf-c3ed-46b4-b62d-3d92290bf9ce",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -950,10 +806,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_currency_full\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"code\": \"860\"\r\n        }\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_currency_full\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"code\": \"860\"\r\n        }\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -973,7 +826,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "11b5a29e-6a6e-4fcd-97b5-d257033f46ad",
 										"exec": [
 											"pm.test(\"Response time is less than 200ms\", function () {\r",
 											"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
@@ -994,10 +846,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_currency_full\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Узбекский\"\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_currency_full\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Узбекский\"\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -1012,64 +861,17 @@
 							"response": []
 						}
 					],
-					"description": "Справочник валют",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Справочник валют"
 				},
 				{
 					"name": "ref_incoterms",
 					"item": [
-						{
-							"name": "ref_incoterms",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "1a5a3f90-1d1c-4536-858b-42b7eb6a731d",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_incoterms\",\r\n    \"params\": {}\r\n}",
-									"options": {
-										"raw": {}
-									}
-								},
-								"url": {
-									"raw": "{{domenTest}}/rpc",
-									"host": [
-										"{{domenTest}}"
-									],
-									"path": [
-										"rpc"
-									]
-								}
-							},
-							"response": []
-						},
 						{
 							"name": "ref_incoterms_read",
 							"event": [
 								{
 									"listen": "test",
 									"script": {
-										"id": "06bdecd1-7f02-4de1-8993-4c761b954afa",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -1095,10 +897,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_incoterms\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"code\": \"FCA\"\r\n        }\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_incoterms\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"code\": \"FCA\"\r\n        }\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -1118,7 +917,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "8f7d94f7-cd4c-41f8-90e9-7466a3f36c22",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -1143,10 +941,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_incoterms\",\r\n        \"op\": \"read\",\r\n        \"query\": \"франко\"\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_incoterms\",\r\n        \"op\": \"read\",\r\n        \"query\": \"франко\"\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -1161,9 +956,7 @@
 							"response": []
 						}
 					],
-					"description": "Выдача записей по каталогу Инкотермс",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Выдача записей по каталогу Инкотермс"
 				},
 				{
 					"name": "ref_product_movement_feature",
@@ -1181,10 +974,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_product_movement_featur\",\r\n    \"params\": {}\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_product_movement_featur\",\r\n    \"params\": {}\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -1204,7 +994,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "77558555-fd41-4def-8470-73df54ebbb76",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -1230,10 +1019,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_product_movement_feature\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 8\r\n        }\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_product_movement_feature\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 8\r\n        }\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -1253,7 +1039,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "0b494739-612b-4143-9b50-d413830df302",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -1278,10 +1063,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_product_movement_feature\",\r\n        \"op\": \"read\",\r\n        \"query\": \"фонд\"\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_product_movement_feature\",\r\n        \"op\": \"read\",\r\n        \"query\": \"фонд\"\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -1296,64 +1078,17 @@
 							"response": []
 						}
 					],
-					"description": "Выдача записей по каталогу Справочник особенностей перемещения",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Выдача записей по каталогу Справочник особенностей перемещения"
 				},
 				{
 					"name": "ref_tax_office",
 					"item": [
-						{
-							"name": "ref_tax_office",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "e86cc212-05cc-4ceb-9531-04d5ba82d21e",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_tax_office\",\r\n    \"params\": {}\r\n}",
-									"options": {
-										"raw": {}
-									}
-								},
-								"url": {
-									"raw": "{{domenTest}}/rpc",
-									"host": [
-										"{{domenTest}}"
-									],
-									"path": [
-										"rpc"
-									]
-								}
-							},
-							"response": []
-						},
 						{
 							"name": "ref_tax_office_read",
 							"event": [
 								{
 									"listen": "test",
 									"script": {
-										"id": "ac4d6084-f391-4ca3-bf63-9aaac289e7d9",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -1379,10 +1114,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_tax_office\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": \"0301\"\r\n        }\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_tax_office\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": \"0301\"\r\n        }\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -1402,7 +1134,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "dac865a2-d612-4a47-b7d1-98b3ce4cd4d0",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -1427,10 +1158,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_tax_office\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Ханабад\"\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_tax_office\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Ханабад\"\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -1445,9 +1173,7 @@
 							"response": []
 						}
 					],
-					"description": "Выдача записей по каталогу ГНИ",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Выдача записей по каталогу ГНИ"
 				},
 				{
 					"name": "ref_bank_mfo",
@@ -1458,7 +1184,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "71ccd9e3-a0ae-4d79-9713-b26b6c275394",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -1483,10 +1208,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_bank_mfo\",\r\n        \"op\": \"read\",\r\n        \"query\": \"ХАЛК\"\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_bank_mfo\",\r\n        \"op\": \"read\",\r\n        \"query\": \"ХАЛК\"\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -1506,7 +1228,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "c00bc7b5-ac8d-4e6f-812d-7b21ff17807f",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -1532,10 +1253,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_bank_mfo\",\r\n        \"op\": \"read\",\r\n        \"filters\": {\r\n            \"id\": \"00566\"\r\n        }\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_bank_mfo\",\r\n        \"op\": \"read\",\r\n        \"filters\": {\r\n            \"id\": \"00566\"\r\n        }\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -1550,9 +1268,7 @@
 							"response": []
 						}
 					],
-					"description": "Выдача записей по каталогу МФО",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Выдача записей по каталогу МФО"
 				},
 				{
 					"name": "ref_free_economic_zone",
@@ -1563,7 +1279,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "4aa04992-4ffa-472f-bb22-682009d39e8d",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -1584,10 +1299,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_free_economic_zone\",\r\n    \"params\": {}\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_free_economic_zone\",\r\n    \"params\": {}\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -1602,9 +1314,7 @@
 							"response": []
 						}
 					],
-					"description": "Справочник свободных экономических зон",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Справочник свободных экономических зон"
 				},
 				{
 					"name": "ref_status_tender",
@@ -1622,10 +1332,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_status_tender\",\r\n    \"params\": {}\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_status_tender\",\r\n    \"params\": {}\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -1652,10 +1359,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_status_tender\",\r\n    \"params\": {}\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_status_tender\",\r\n    \"params\": {}\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -1675,7 +1379,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "ba384be7-c1a5-4110-a328-9465b750439c",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -1696,10 +1399,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"parent_id\": 1,\r\n    \"method\": \"ref_status_tender\",\r\n    \"params\": {\r\n      \"scope\": \"owner\"\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"parent_id\": 1,\r\n    \"method\": \"ref_status_tender\",\r\n    \"params\": {\r\n      \"scope\": \"owner\"\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -1719,7 +1419,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "ece364dc-d21b-45ba-88bd-ce7c505e32e4",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -1740,10 +1439,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"parent_id\": 1,\r\n    \"method\": \"ref_status_tender\",\r\n    \"params\": {\r\n      \"scope\": \"participant\"\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"parent_id\": 1,\r\n    \"method\": \"ref_status_tender\",\r\n    \"params\": {\r\n      \"scope\": \"participant\"\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -1758,9 +1454,7 @@
 							"response": []
 						}
 					],
-					"description": "Справочник статусов тендеров",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Справочник статусов тендеров"
 				},
 				{
 					"name": "ref_expenses",
@@ -1771,7 +1465,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "9f1b35fe-9db9-42b8-9cec-c57ef118bc8d",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -1792,10 +1485,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"parent_id\": 1,\r\n  \"method\": \"ref_expense_item\",\r\n  \"params\": {\r\n    \r\n  }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"parent_id\": 1,\r\n  \"method\": \"ref_expense_item\",\r\n  \"params\": {\r\n    \r\n  }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -1815,7 +1505,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "9d90d919-151e-40d3-bd0e-b2cf6e9cd41a",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -1836,10 +1525,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"parent_id\": 1,\r\n  \"method\": \"ref_expense_item\",\r\n  \"params\": {\r\n    \r\n  }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"parent_id\": 1,\r\n  \"method\": \"ref_expense_item\",\r\n  \"params\": {\r\n    \r\n  }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -1859,7 +1545,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "31318b6a-e1b5-4a18-8842-4ea80974216f",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -1884,10 +1569,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_expenses\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Электрон\"\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_expenses\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Электрон\"\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -1902,9 +1584,7 @@
 							"response": []
 						}
 					],
-					"description": "Список статей расходов",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Список статей расходов"
 				},
 				{
 					"name": "ref_catalog_category",
@@ -1915,7 +1595,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "b792db1b-5322-4ee8-bba3-5e10ac634885",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -1936,10 +1615,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_catalog_category\",\r\n    \"params\": {\r\n        \r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_catalog_category\",\r\n    \"params\": {\r\n        \r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -1954,9 +1630,7 @@
 							"response": []
 						}
 					],
-					"description": "Выдача записей по категориям товаров,услуг,работ",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Выдача записей по категориям товаров,услуг,работ"
 				},
 				{
 					"name": "ref_bank_account_type",
@@ -1974,10 +1648,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"parent_id\": 1,\r\n  \"method\": \"ref_bank_account_type\",\r\n  \"params\": {\r\n    \r\n  }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"parent_id\": 1,\r\n  \"method\": \"ref_bank_account_type\",\r\n  \"params\": {\r\n    \r\n  }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -1997,7 +1668,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "c8c73223-5698-4a03-a986-74b4d90f8e10",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -2023,10 +1693,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_bank_account_type\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 2\r\n        }\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_bank_account_type\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 2\r\n        }\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2046,7 +1713,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "ec321081-d726-4933-9829-426c747a668f",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -2071,10 +1737,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_bank_account_type\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Основной\"\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_bank_account_type\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Основной\"\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2094,7 +1757,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "ab56e59c-0cde-412a-80a1-a0073c04d848",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -2104,16 +1766,13 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6e7ebda7-a3fb-44e8-814f-adaddfa73b5f",
 								"type": "text/javascript",
 								"exec": [
 									""
 								]
 							}
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "ref_soogu",
@@ -2124,7 +1783,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "bdf4fe81-e882-4711-828e-b616c4bf6995",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -2147,10 +1805,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"ref_soogu\",\r\n  \"params\": {\r\n   \r\n  }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"ref_soogu\",\r\n  \"params\": {\r\n   \r\n  }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc?",
@@ -2176,7 +1831,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "07a9133d-7d86-461a-99b1-2c811d91b879",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -2199,10 +1853,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"ref_soogu\",\r\n  \"params\": {\r\n   \r\n  }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"ref_soogu\",\r\n  \"params\": {\r\n   \r\n  }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc?",
@@ -2228,7 +1879,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "ab4faae8-ed31-4329-b952-edd3a6a64a05",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -2253,10 +1903,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_soogu\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Органы\"\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_soogu\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Органы\"\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc?",
@@ -2277,9 +1924,7 @@
 							"response": []
 						}
 					],
-					"description": "Справочник СООГУ",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Справочник СООГУ"
 				},
 				{
 					"name": "ref_bad_suppliers",
@@ -2290,7 +1935,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "8081affc-2589-47ca-bf71-dce61789e262",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -2311,10 +1955,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"id\": 1,\r\n  \"method\": \"ref_bad_suppliers\",\r\n  \"params\": {\r\n    \"offset\": 2\r\n  }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"id\": 1,\r\n  \"method\": \"ref_bad_suppliers\",\r\n  \"params\": {\r\n    \"offset\": 2\r\n  }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2329,9 +1970,7 @@
 							"response": []
 						}
 					],
-					"description": "Выдача записей по каталогу Справочник недобросовестных поставщик",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Выдача записей по каталогу Справочник недобросовестных поставщик"
 				},
 				{
 					"name": "ref_area",
@@ -2342,7 +1981,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "20f0e980-f749-43ce-b3d7-8a97e02a51c6",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -2365,10 +2003,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_area\",\r\n    \"params\": {\r\n        \"parent_id\": \"1.5.6\",\r\n        \"limit\": 4,\r\n        \"offset\": 3\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"ref_area\",\r\n    \"params\": {\r\n        \"parent_id\": \"1.5.6\",\r\n        \"limit\": 4,\r\n        \"offset\": 3\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2383,9 +2018,7 @@
 							"response": []
 						}
 					],
-					"description": "Справочник регионов",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Справочник регионов"
 				},
 				{
 					"name": "ref_country",
@@ -2396,7 +2029,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "c28744c3-877b-4808-91e6-72096ad0a9b1",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -2422,10 +2054,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_country\",\r\n        \"op\": \"read\",\r\n        \"filters\": {\r\n            \"id\": 2\r\n        }\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_country\",\r\n        \"op\": \"read\",\r\n        \"filters\": {\r\n            \"id\": 2\r\n        }\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2445,7 +2074,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "8e406c58-d661-42ea-a9b0-a5bb654c3b35",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -2470,10 +2098,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_country\",\r\n        \"op\": \"read\",\r\n        \"query\": \"АЛБАНИЯ\"\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_country\",\r\n        \"op\": \"read\",\r\n        \"query\": \"АЛБАНИЯ\"\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2488,9 +2113,7 @@
 							"response": []
 						}
 					],
-					"description": "Выдача записей по справочнику стран",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Выдача записей по справочнику стран"
 				},
 				{
 					"name": "ref_single_supplier_directory",
@@ -2501,7 +2124,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "f4816b2e-b0b7-4b93-bb0d-df1de80d256c",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -2527,10 +2149,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_single_supplier_directory\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 1\r\n        }\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_single_supplier_directory\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 1\r\n        }\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2550,7 +2169,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "eef20b22-8b01-4071-80af-42c9f55d66e1",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -2575,10 +2193,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_single_supplier_directory\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Ўзтрансгаз\"\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_single_supplier_directory\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Ўзтрансгаз\"\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2592,9 +2207,7 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "ref_insurance",
@@ -2605,7 +2218,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "cc4e7e23-69c0-4042-bd5f-f0c48b1e5b95",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -2631,10 +2243,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_insurance\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 2\r\n        }\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_insurance\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 2\r\n        }\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2654,7 +2263,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "b6103c2e-7a8f-49ee-a96c-8a98afed194c",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -2679,10 +2287,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_insurance\",\r\n        \"op\": \"read\",\r\n        \"query\": \"застрахованы\"\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_insurance\",\r\n        \"op\": \"read\",\r\n        \"query\": \"застрахованы\"\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2697,9 +2302,7 @@
 							"response": []
 						}
 					],
-					"description": "Справочник типов страховок",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Справочник типов страховок"
 				},
 				{
 					"name": "ref_type_business",
@@ -2710,7 +2313,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "2f706292-94ea-4da2-94e8-64bf2bea4d55",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -2736,10 +2338,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_business\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 2\r\n        }\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_business\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 2\r\n        }\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2759,7 +2358,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "35dfc8f2-3e6a-42f3-805a-b730d3a87d41",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -2784,10 +2382,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_business\",\r\n        \"op\": \"read\",\r\n        \"query\": \"резиденты\"\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_business\",\r\n        \"op\": \"read\",\r\n        \"query\": \"резиденты\"\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2802,9 +2397,7 @@
 							"response": []
 						}
 					],
-					"description": "Справочник типов юридических лиц",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Справочник типов юридических лиц"
 				},
 				{
 					"name": "ref_type_deposit",
@@ -2815,7 +2408,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "5e22af68-f1de-4374-8942-c309ad8cfd63",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -2836,10 +2428,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_deposit\",\r\n        \"op\": \"read\"\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_deposit\",\r\n        \"op\": \"read\"\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2866,7 +2455,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "b1de28a8-74e7-4fd2-b04b-7feda88efb18",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -2891,10 +2479,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_deposit\",\r\n        \"op\": \"read\",\r\n        \"query\": \"сумма\"\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_deposit\",\r\n        \"op\": \"read\",\r\n        \"query\": \"сумма\"\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2909,9 +2494,7 @@
 							"response": []
 						}
 					],
-					"description": "Справочник типов депозитов",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Справочник типов депозитов"
 				},
 				{
 					"name": "ref_type_periodicity",
@@ -2922,7 +2505,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "1d747885-12ed-4d61-a57d-085eb8a49c7c",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -2948,10 +2530,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_periodicity\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 2\r\n        }\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_periodicity\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 2\r\n        }\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -2971,7 +2550,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "6f0f931d-5cdc-487a-a275-34c06c3226ad",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -2996,10 +2574,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_periodicity\",\r\n        \"op\": \"read\",\r\n        \"query\": \"поставка\"\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_type_periodicity\",\r\n        \"op\": \"read\",\r\n        \"query\": \"поставка\"\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3014,9 +2589,7 @@
 							"response": []
 						}
 					],
-					"description": "Справочник типов сроков поставки",
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"description": "Справочник типов сроков поставки"
 				},
 				{
 					"name": "ref_method_marks",
@@ -3027,7 +2600,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "74f3eb4e-1585-499e-8ffd-f6c46b9a7780",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -3053,10 +2625,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_method_marks\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": \"rating\"\r\n        }\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_method_marks\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": \"rating\"\r\n        }\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3076,7 +2645,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "2bc1f55e-3701-4b46-9e2b-169ea8b02610",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -3101,10 +2669,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_method_marks\",\r\n        \"op\": \"read\",\r\n        \"query\": \"метод\"\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_method_marks\",\r\n        \"op\": \"read\",\r\n        \"query\": \"метод\"\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3124,7 +2689,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "1faceac7-acc6-4a04-980b-7682133062f5",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -3134,16 +2698,13 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "247200f4-d34d-4b8d-863d-3f170a2189ef",
 								"type": "text/javascript",
 								"exec": [
 									""
 								]
 							}
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "ref_status_error",
@@ -3154,7 +2715,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "ad1ce79f-3df5-4a93-93a5-d548ce244532",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -3180,10 +2740,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_status_error\",\r\n        \"op\": \"read\",\r\n        \"filters\": {\r\n          \"id\": \"done\"\r\n        }\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_status_error\",\r\n        \"op\": \"read\",\r\n        \"filters\": {\r\n          \"id\": \"done\"\r\n        }\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3203,7 +2760,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "c58b9d96-788a-47b1-a7f8-d28409432436",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -3228,10 +2784,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_status_error\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Завершена\"\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_status_error\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Завершена\"\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3245,9 +2798,7 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "ref_brokers",
@@ -3258,7 +2809,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "54beedc9-0fa4-4d27-b7d6-95bb035a332c",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -3279,10 +2829,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_brokers\",\r\n        \"op\": \"read\"\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_brokers\",\r\n        \"op\": \"read\"\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3296,9 +2843,7 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "ref_special_suppliers",
@@ -3309,7 +2854,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "3b9f2a4f-210a-435f-bb5c-45f2a3eda2ce",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -3335,10 +2879,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_special_suppliers\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 1\r\n        }\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_special_suppliers\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": 1\r\n        }\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3358,7 +2899,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "b6aa4c98-508a-483b-be9b-b2c56894588a",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -3383,10 +2923,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_special_suppliers\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Ўзбекистон\"\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_special_suppliers\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Ўзбекистон\"\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3400,148 +2937,7 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "ref_status_contest",
-					"item": [
-						{
-							"name": "ref_status_contest_owner",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "879dfb2a-7c32-4e38-b6b9-ceb51ac4d1bb",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref_status_contest\",\r\n    \"params\": {\r\n        \"scope\": \"owner\"\r\n        \r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
-								},
-								"url": {
-									"raw": "{{domenTest}}/rpc",
-									"host": [
-										"{{domenTest}}"
-									],
-									"path": [
-										"rpc"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "ref_status_contest_participant",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "81e3b53e-e883-424d-a8f8-bbcedb755642",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref_status_contest\",\r\n    \"params\": {\r\n        \"scope\": \"participant\"\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
-								},
-								"url": {
-									"raw": "{{domenTest}}/rpc",
-									"host": [
-										"{{domenTest}}"
-									],
-									"path": [
-										"rpc"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "ref_status_contest_public",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "bf884265-1682-4637-8a9c-e5e5fc03cc25",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref_status_contest\",\r\n    \"params\": {\r\n        \"scope\": \"public\",\r\n        \"code\": \"cancel\"\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
-								},
-								"url": {
-									"raw": "{{domenTest}}/rpc",
-									"host": [
-										"{{domenTest}}"
-									],
-									"path": [
-										"rpc"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "ref_status_procedure",
@@ -3552,7 +2948,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "06e9f46c-a27f-46e6-9de9-a07c6fc809eb",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -3573,10 +2968,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n      \"method\": \"ref_status\",\r\n    \"params\": {\r\n        \"scope\": \"public\"\r\n        \r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n      \"method\": \"ref_status\",\r\n    \"params\": {\r\n        \"scope\": \"public\"\r\n        \r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3596,7 +2988,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "357ad8ac-31a4-4e74-83c2-088156edec9e",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -3617,10 +3008,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n      \"method\": \"ref_status\",\r\n    \"params\": {\r\n        \"scope\": \"owner\"\r\n        \r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n      \"method\": \"ref_status\",\r\n    \"params\": {\r\n        \"scope\": \"owner\"\r\n        \r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3640,7 +3028,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "7ac810b0-6fe4-4372-b7c0-c91d4051b0e9",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -3661,10 +3048,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n      \"method\": \"ref_status\",\r\n    \"params\": {\r\n        \"scope\": \"participant\"\r\n        \r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n      \"method\": \"ref_status\",\r\n    \"params\": {\r\n        \"scope\": \"participant\"\r\n        \r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3678,9 +3062,7 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "ref_unit",
@@ -3691,7 +3073,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "b185c8a2-591f-4da1-af4d-8203d78f454e",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -3712,10 +3093,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_unit\",\r\n        \"op\": \"read\"\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_unit\",\r\n        \"op\": \"read\"\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3729,9 +3107,7 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "ref_billing_operations",
@@ -3742,7 +3118,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "fa3fd7b6-7b2b-48eb-8965-30ac64168f22",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -3763,10 +3138,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_billing_operations\",\r\n        \"op\": \"read\"\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_billing_operations\",\r\n        \"op\": \"read\"\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3780,9 +3152,7 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "ref_categories",
@@ -3793,7 +3163,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "8e6a276a-23f5-40c3-93d3-9d5dc9e4b0fc",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -3824,10 +3193,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"create\",\r\n        \"data\": {\r\n          \"name\": \"postman\"\r\n        }\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"create\",\r\n        \"data\": {\r\n          \"name\": \"postman\"\r\n        }\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3847,7 +3213,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "b2853e22-cc04-4a7a-b65b-ffc13f50d3bf",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -3870,10 +3235,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"read\",\r\n        \"query\": \"postman\"\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"read\",\r\n        \"query\": \"postman\"\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3893,7 +3255,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "5bb7bfc8-ebbc-455e-8635-37d75bc45cc3",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -3920,10 +3281,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": \"{{categories_id}}\"\r\n        }\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"read\",\r\n        \"filters\":{\r\n          \"id\": \"{{categories_id}}\"\r\n        }\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3943,7 +3301,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "9b397752-c36a-4b3f-a0f5-6cf003a9cddd",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -3974,10 +3331,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"update\",\r\n        \"data\": {\r\n            \"id\": \"{{categories_id}}\",\r\n            \"name\": \"postman2\"\r\n        }\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"update\",\r\n        \"data\": {\r\n            \"id\": \"{{categories_id}}\",\r\n            \"name\": \"postman2\"\r\n        }\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -3997,7 +3351,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "994e48e6-f4c8-437b-aab6-55a145ff4ca9",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -4028,10 +3381,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"delete\",\r\n        \"data\":{\r\n          \"id\": \"{{categories_id}}\"\r\n        }\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"delete\",\r\n        \"data\":{\r\n          \"id\": \"{{categories_id}}\"\r\n        }\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -4045,9 +3395,7 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "ref_products",
@@ -4058,7 +3406,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "7d4461c4-5ddb-45ec-9491-49869599b0cb",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -4091,10 +3438,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_products\",\r\n        \"op\": \"create\",\r\n        \"data\": {\r\n          \"name\": \"postman\",\r\n          \"category_id\": \"{{categories_id}}\"\r\n        }\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_products\",\r\n        \"op\": \"create\",\r\n        \"data\": {\r\n          \"name\": \"postman\",\r\n          \"category_id\": \"{{categories_id}}\"\r\n        }\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -4114,7 +3458,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "77c08ab1-0a7d-43c8-b27e-dbfaa2d9e9b9",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -4136,10 +3479,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{  \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_products\",\r\n        \"op\": \"read\",\r\n        \"query\": \"postman\"\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{  \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_products\",\r\n        \"op\": \"read\",\r\n        \"query\": \"postman\"\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -4159,7 +3499,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "dabdb452-23c2-4b3b-aad6-7aabfc3b415b",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -4184,10 +3523,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_products\",\r\n        \"op\": \"read\",\r\n        \"filters\": {\r\n          \"category_id\": \"{{categories_id}}\"\r\n        }\r\n    }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_products\",\r\n        \"op\": \"read\",\r\n        \"filters\": {\r\n          \"category_id\": \"{{categories_id}}\"\r\n        }\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -4207,7 +3543,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "b048fb4f-69f5-46b9-bd4c-a61f1faa8c01",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -4238,10 +3573,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_products\",\r\n        \"op\": \"update\",\r\n        \"data\": {\r\n          \"name\": \"postman2\",\r\n          \"category_id\": \"{{categories_id}}\",\r\n          \"id\": \"{{product_id}}\"\r\n\r\n        }\r\n    }\r\n}\r\n",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_products\",\r\n        \"op\": \"update\",\r\n        \"data\": {\r\n          \"name\": \"postman2\",\r\n          \"category_id\": \"{{categories_id}}\",\r\n          \"id\": \"{{product_id}}\"\r\n\r\n        }\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -4261,7 +3593,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "c56b7c57-fb53-44de-bded-805bba5b8f54",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -4292,10 +3623,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"ref\",\r\n  \"params\": {\r\n    \"ref\": \"ref_products\",\r\n        \"op\": \"delete\",\r\n    \"data\": {\r\n      \"id\": \"{{product_id}}\"\r\n    }\r\n  }\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"ref\",\r\n  \"params\": {\r\n    \"ref\": \"ref_products\",\r\n        \"op\": \"delete\",\r\n    \"data\": {\r\n      \"id\": \"{{product_id}}\"\r\n    }\r\n  }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -4309,9 +3637,7 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "ref_procedures_em",
@@ -4322,7 +3648,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "032be558-f74f-4535-a74c-4b3924330ace",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -4363,7 +3688,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "3de26d10-b09b-440e-a10d-d7195d5d792a",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -4413,7 +3737,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "d61cd223-b57b-4f1d-8f23-c1f6e862e48c",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -4459,9 +3782,7 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "ref_faqs",
@@ -4472,7 +3793,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "c478b1ef-ca59-44e7-9315-eae928dd6407",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -4507,9 +3827,7 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "get_current_time",
@@ -4520,7 +3838,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "dc812521-1718-47c9-a525-a3d2eabe6f5d",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -4557,9 +3874,7 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "get_activity_stats",
@@ -4570,7 +3885,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "f3f3c388-96eb-4670-8690-b5b4a4120ff1",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -4605,9 +3919,7 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "tree_products",
@@ -4618,7 +3930,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "d928e20a-b16e-4c9f-905c-01a853051490",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -4662,7 +3973,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "94c4d3e8-4d7d-4138-9cef-4af6bee5b467",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -4709,9 +4019,7 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "ref_reduction_object_public",
@@ -4722,7 +4030,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "92f8462b-e5c0-48e7-a71e-6723c40cb35a",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -4757,12 +4064,9 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "PurchaseList",
@@ -4773,7 +4077,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1378d29b-9d65-4bed-87df-8147b562fc14",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -4796,10 +4099,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+5@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+5@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n"
 						},
 						"url": {
 							"raw": "{{domenTest}}/oauth/token",
@@ -4820,7 +4120,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e31be1be-d012-4e2f-943f-91ad83a97a7f",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -4848,10 +4147,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"create_schedule\",\r\n    \"params\": {\r\n        \"year\": 2200\r\n    }\r\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"create_schedule\",\r\n    \"params\": {\r\n        \"year\": 2200\r\n    }\r\n}"
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -4872,7 +4168,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9d6f23a2-c081-4aac-89fe-fdeaaa551f9d",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -4902,10 +4197,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"get_schedules\",\r\n    \"params\": {}\r\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"get_schedules\",\r\n    \"params\": {}\r\n}"
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -4925,7 +4217,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8c97f28b-9389-47af-b018-e405601c3ad5",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -4957,10 +4248,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 2,\r\n    \"method\": \"get_schedule_info\",\r\n    \"params\": {\r\n        \"id\": \"{{schedule_id}}\"\r\n    }\r\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 2,\r\n    \"method\": \"get_schedule_info\",\r\n    \"params\": {\r\n        \"id\": \"{{schedule_id}}\"\r\n    }\r\n}"
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -4988,7 +4276,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "72ff0ed7-0d22-485d-9ca0-ba7949303dc1",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -5016,10 +4303,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"create_schedule_version\",\r\n    \"params\": {\r\n        \"schedule_id\": \"{{schedule_id}}\"\r\n    }\r\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"create_schedule_version\",\r\n    \"params\": {\r\n        \"schedule_id\": \"{{schedule_id}}\"\r\n    }\r\n}"
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -5040,7 +4324,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5371e167-c3ec-4e63-b390-7cdf61f7abe0",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -5071,10 +4354,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"get_schedule_versions\",\r\n    \"params\": {\r\n      \"id\": \"{{schedule_id}}\"\r\n    }\r\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"get_schedule_versions\",\r\n    \"params\": {\r\n      \"id\": \"{{schedule_id}}\"\r\n    }\r\n}"
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -5095,7 +4375,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "84465947-7500-43aa-9740-ee6c43b74b5d",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -5123,10 +4402,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"create_schedule_version_position\",\r\n    \"params\": {\r\n        \"schedule_version_id\": \"{{schedule_version}}\",\r\n        \"type\": \"category\",\r\n        \"month\": 0,\r\n        \"amount\": 20,\r\n        \"unit\": \"166\",\r\n        \"price\": 2000,\r\n        \"category_id\": \"1\",\r\n        \"currency\": \"USD\"\r\n    }\r\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"create_schedule_version_position\",\r\n    \"params\": {\r\n        \"schedule_version_id\": \"{{schedule_version}}\",\r\n        \"type\": \"category\",\r\n        \"month\": 0,\r\n        \"amount\": 20,\r\n        \"unit\": \"166\",\r\n        \"price\": 2000,\r\n        \"category_id\": \"1\",\r\n        \"currency\": \"USD\"\r\n    }\r\n}"
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -5147,7 +4423,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3afd5fb6-b086-4558-9788-fb3db0fd4992",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -5177,10 +4452,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"id\": 1,\r\n  \"method\": \"update_schedule_version_position\",\r\n  \"params\": {\r\n    \"schedule_version_id\": \"{{schedule_version}}\",\r\n    \"id\": \"{{position_id}}\",\r\n    \"month\": 0,\r\n    \"amount\": 15,\r\n    \"unit\": \"166\",\r\n    \"price\": 1500,\r\n    \"currency\": \"USD\"\r\n  }\r\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"id\": 1,\r\n  \"method\": \"update_schedule_version_position\",\r\n  \"params\": {\r\n    \"schedule_version_id\": \"{{schedule_version}}\",\r\n    \"id\": \"{{position_id}}\",\r\n    \"month\": 0,\r\n    \"amount\": 15,\r\n    \"unit\": \"166\",\r\n    \"price\": 1500,\r\n    \"currency\": \"USD\"\r\n  }\r\n}"
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -5201,7 +4473,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "26901a8e-c246-4feb-a442-8cafd72d801a",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -5233,10 +4504,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"id\": 1,\r\n  \"method\": \"get_schedule_version_info\",\r\n  \"params\": {\r\n    \"id\": \"{{schedule_version}}\"\r\n  }\r\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"id\": 1,\r\n  \"method\": \"get_schedule_version_info\",\r\n  \"params\": {\r\n    \"id\": \"{{schedule_version}}\"\r\n  }\r\n}"
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -5257,7 +4525,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2de26a0b-f985-4d23-970e-a23861ed7962",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -5287,10 +4554,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 12,\r\n    \"method\": \"update_schedule_version\",\r\n    \"params\": {\r\n        \"id\": \"{{schedule_version}}\",\r\n        \"basis\": \"План-график утверждён министром Прокофьевной Л.А. документом №121212 от 12.12.2019\"\r\n    }\r\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 12,\r\n    \"method\": \"update_schedule_version\",\r\n    \"params\": {\r\n        \"id\": \"{{schedule_version}}\",\r\n        \"basis\": \"План-график утверждён министром Прокофьевной Л.А. документом №121212 от 12.12.2019\"\r\n    }\r\n}"
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -5311,7 +4575,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7ec56450-3339-4ab3-8210-61c2e5749bbe",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -5341,10 +4604,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"delete_schedule_version_position\",\r\n    \"params\": {\r\n        \"id\": \"{{position_id}}\",\r\n        \"schedule_version_id\": \"{{schedule_version}}\"\r\n    }\r\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"delete_schedule_version_position\",\r\n    \"params\": {\r\n        \"id\": \"{{position_id}}\",\r\n        \"schedule_version_id\": \"{{schedule_version}}\"\r\n    }\r\n}"
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -5365,7 +4625,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "58ef6305-fc7b-45bf-9aa2-4f08dd148d46",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -5395,10 +4654,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"delete_schedule_version\",\r\n    \"params\": {\r\n        \"id\": \"{{schedule_version}}\"\r\n    }\r\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"id\": 1,\r\n    \"method\": \"delete_schedule_version\",\r\n    \"params\": {\r\n        \"id\": \"{{schedule_version}}\"\r\n    }\r\n}"
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -5419,7 +4675,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b161ed51-38b3-4202-ae5d-cd99a1c968eb",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -5449,10 +4704,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"delete_schedule\",\r\n  \"params\": {\r\n    \"id\": \"{{schedule_id}}\"\r\n  }\r\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"delete_schedule\",\r\n  \"params\": {\r\n    \"id\": \"{{schedule_id}}\"\r\n  }\r\n}"
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
@@ -5467,8 +4719,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Auction",
@@ -5479,7 +4730,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a8eac62d-e48c-47be-92f8-ed332b049474",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -5502,10 +4752,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+5@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+5@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n"
 						},
 						"url": {
 							"raw": "{{domenTest}}/oauth/token",
@@ -5526,7 +4773,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d03d1d51-2c83-4ae8-a6a4-9bf6106af3a9",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -5577,7 +4823,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "97a7a7b2-3d06-4230-8873-b404d7a3e785",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -5628,7 +4873,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "76ec69c8-7631-42cc-90d2-ac4afd5d45e4",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -5679,7 +4923,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ccfee5d7-699c-499d-925f-893f80e79bb7",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -5730,7 +4973,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d44d2f6d-6c2f-43b2-a819-4b8b6c92e0b9",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -5781,7 +5023,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c0e1fb25-6604-466d-a2b9-867a39fc9528",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -5826,8 +5067,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "ref_filter_DSL",
@@ -5838,7 +5078,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8e85c2af-a5ff-4e6f-9326-74a804421d5e",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -5861,10 +5100,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+5@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+5@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n"
 						},
 						"url": {
 							"raw": "{{domenTest}}/oauth/token",
@@ -5885,7 +5121,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3d9f65a3-c4a2-4e3f-b7c5-d85ddd1eafe4",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -5947,7 +5182,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9d200c14-06ca-4f51-984d-0a10ff9c0026",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -6008,7 +5242,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "13600b86-0f6b-4eec-93cc-2cb7be8d04e4",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -6070,7 +5303,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ddf4565b-6f5f-494d-8e2c-cb3cd3f75019",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -6127,15 +5359,13 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "6baead21-3ecb-4fa2-b7f0-68e7c262efa8",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -6145,7 +5375,6 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "7fdeb0b3-9447-452d-89ba-966efd88a5b2",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -6155,22 +5384,18 @@
 	],
 	"variable": [
 		{
-			"id": "89fc5804-a502-44ae-93cc-1b0ac8a244c8",
 			"key": "token",
 			"value": "",
 			"disabled": true
 		},
 		{
-			"id": "4654dbb7-ffa0-4bb5-bdf9-7c980e494abb",
 			"key": "domenTest",
 			"value": "http://192.168.122.1:4000"
 		},
 		{
-			"id": "c2341c75-e0b5-4fe4-b64d-ba3d8812a399",
 			"key": "bleyd",
 			"value": "",
 			"disabled": true
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
