@@ -4173,8 +4173,8 @@
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Body matches 2100\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"2200\");\r",
+									"pm.test(\"Body matches 2222\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"2222\");\r",
 									"});"
 								],
 								"type": "text/javascript"
