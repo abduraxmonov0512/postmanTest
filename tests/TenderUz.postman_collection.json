@@ -50,7 +50,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"xaridtest+1@gmail.com\",\r\n    \"password\": \"Xarid123!\"\r\n}\r\n"
+									"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+5@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/oauth/token",
