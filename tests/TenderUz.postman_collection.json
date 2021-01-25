@@ -2175,7 +2175,7 @@
 											"});\r",
 											"\r",
 											"pm.test(\"Body matches Ўзтрансгаз\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"Ўзтрансгаз\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"UZ_NAME\");\r",
 											"});"
 										],
 										"type": "text/javascript"
@@ -2193,7 +2193,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_single_supplier_directory\",\r\n        \"op\": \"read\",\r\n        \"query\": \"Ўзтрансгаз\"\r\n    }\r\n}\r\n"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_single_supplier_directory\",\r\n        \"op\": \"read\",\r\n        \"query\": \"UZ_NAME\"\r\n    }\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
