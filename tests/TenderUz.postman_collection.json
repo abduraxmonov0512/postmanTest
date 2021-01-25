@@ -50,7 +50,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+5@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n"
+									"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"inurilloev313+2@gmail.com\",\r\n    \"password\": \"Izzat123.\"\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/oauth/token",
@@ -4099,7 +4099,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+5@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n"
+							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"inurilloev313+2@gmail.com\",\r\n    \"password\": \"Izzat123.\"\r\n}"
 						},
 						"url": {
 							"raw": "{{domenTest}}/oauth/token",
@@ -4542,7 +4542,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+5@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n"
+							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"inurilloev313+2@gmail.com\",\r\n    \"password\": \"Izzat123.\"\r\n}"
 						},
 						"url": {
 							"raw": "{{domenTest}}/oauth/token",
@@ -4890,7 +4890,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+5@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n"
+							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"inurilloev313+2@gmail.com\",\r\n    \"password\": \"Izzat123.\"\r\n}"
 						},
 						"url": {
 							"raw": "{{domenTest}}/oauth/token",
