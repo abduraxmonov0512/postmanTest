@@ -3193,7 +3193,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"create\",\r\n        \"data\": {\r\n          \"name\": \"postman\"\r\n        }\r\n    }\r\n}\r\n"
+									"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref\",\r\n    \"params\": {\r\n        \"ref\": \"ref_categories\",\r\n        \"op\": \"create\",\r\n        \"data\": {\r\n            \"category_type\": 1,\r\n            \"name\": \"postman\"\r\n        }\r\n    }\r\n}"
 								},
 								"url": {
 									"raw": "{{domenTest}}/rpc",
@@ -4003,14 +4003,9 @@
 									"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"tree_products\",\r\n    \"params\": {\r\n        \"parent_id\": \"0.24dca85a-2b2d-4b1b-9fa8-980f848a5cde\",\r\n        \"limit\": 51,\r\n        \"offset\": 0\r\n    }\r\n}"
 								},
 								"url": {
-									"raw": "http://api.test.tender.mf.uz/rpc",
-									"protocol": "http",
+									"raw": "{{domenTest}}/rpc",
 									"host": [
-										"api",
-										"test",
-										"tender",
-										"mf",
-										"uz"
+										"{{domenTest}}"
 									],
 									"path": [
 										"rpc"
