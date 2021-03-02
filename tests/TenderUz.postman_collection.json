@@ -5995,16 +5995,17 @@
 	],
 	"variable": [
 		{
-			"key": "token",
+			"key": "token1",
 			"value": ""
 		},
 		{
 			"key": "domenTest",
-			"value": "https://api.test.xt-xarid.uz"
+			"value": "http://192.168.122.210:4000"
 		},
 		{
 			"key": "bleyd",
-			"value": ""
+			"value": "",
+			"disabled": true
 		}
 	]
 }
