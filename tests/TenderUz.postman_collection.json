@@ -4572,6 +4572,97 @@
 					"response": []
 				},
 				{
+					"name": "create_schedule",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.globals.set(\"schedule_id\", pm.response.json().result.id);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref_schedule\",\r\n    \"params\": {\r\n        \"ref\": \"schedule_position\",\r\n        \"op\": \"create\",\r\n        \"data\": {\r\n            \"name\": \"postmanTest\",\r\n            \"year\": 2021,\r\n            \"month_begin\": 2,\r\n            \"month_end\": 11,\r\n            \"currency\": \"UZS\",\r\n            \"type\": \"position\"\r\n        }\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref_schedule\",\r\n    \"params\": {\r\n        \"ref\": \"schedule_goods\",\r\n        \"op\": \"create\",\r\n        \"data\": {\r\n            \"product_id\": \"57fae9c8-94c9-4e33-958d-22f0866dc6ce\",\r\n            \"amount\": 10,\r\n            \"unit\": \"sht\",\r\n            \"price\": 1000000,\r\n            \"positions_id\": \"{{schedule_id}}\",\r\n            \"type_item\": 0\r\n        }\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{domenTest}}/rpc",
+							"host": [
+								"{{domenTest}}"
+							],
+							"path": [
+								"rpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "create_auction",
 					"event": [
 						{
@@ -4607,7 +4698,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"create_procedure\",\r\n    \"params\": {\r\n        \"type\": \"reduction\",\r\n        \"tmpl\": \"reduction_v2\",\r\n        \"clearing_off\": true,\r\n        \"sign_off\": true,\r\n        \"hidden\": false,\r\n        \"readonly\": false,\r\n        \"object\": [\r\n            {\r\n                \"type\": \"items\",\r\n                \"data\": {\r\n                    \"product_id\": \"7ebb2f7e-7a23-47a9-828f-2ef981a0a91c\",\r\n                    \"unit\": \"sht\",\r\n                    \"currency\": \"UZS\",\r\n                    \"amount\": 10,\r\n                    \"price\": 100\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}"
+							"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"create_procedure\",\r\n    \"params\": {\r\n        \"type\": \"reduction\",\r\n        \"object\": {\r\n            \"type\": \"new_purchase\",\r\n            \"id\": \"{{schedule_id}}\"\r\n        }\r\n    }\r\n}"
 						},
 						"url": {
 							"raw": "{{domenTest}}/urpc",
@@ -6004,8 +6095,7 @@
 		},
 		{
 			"key": "bleyd",
-			"value": "",
-			"disabled": true
+			"value": ""
 		}
 	]
 }
