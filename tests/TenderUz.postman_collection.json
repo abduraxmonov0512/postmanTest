@@ -6122,7 +6122,7 @@
 					"response": []
 				},
 				{
-					"name": "authorization Copy",
+					"name": "schedule_isugf_goods",
 					"event": [
 						{
 							"listen": "test",
@@ -6131,7 +6131,7 @@
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"\r",
-									"    pm.globals.set(\"token\", pm.response.json().access_token);\r",
+									"   \r",
 									"});\r",
 									"\r",
 									""
