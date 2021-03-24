@@ -6170,7 +6170,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref_schedule\",\r\n    \"params\": {\r\n        \"ref\": \"schedule_isugf_goods\",\r\n        \"op\": \"read\",\r\n        \"filters\": {\r\n             \"id\": \"63f7ac10-7793-47a2-bfa0-8ff6f7018fe6\"\r\n        }\r\n    }\r\n}"
+							"raw": "{\r\n    \"id\": 1,\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ref_schedule\",\r\n    \"params\": {\r\n        \"ref\": \"schedule_isugf_goods\",\r\n        \"op\": \"read\"\r\n    }\r\n}"
 						},
 						"url": {
 							"raw": "{{domenTest}}/rpc",
