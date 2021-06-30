@@ -50,7 +50,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"inurilloev313+2@gmail.com\",\r\n    \"password\": \"Izzat123.\"\r\n}\r\n"
+									"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+3@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/oauth/token",
@@ -4556,7 +4556,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"inurilloev313+2@gmail.com\",\r\n    \"password\": \"Izzat123.\"\r\n}"
+							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+3@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n"
 						},
 						"url": {
 							"raw": "{{domenTest}}/oauth/token",
@@ -4627,6 +4627,19 @@
 				},
 				{
 					"name": "add_product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -4995,7 +5008,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"inurilloev313+2@gmail.com\",\r\n    \"password\": \"Izzat123.\"\r\n}"
+							"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+3@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n"
 						},
 						"url": {
 							"raw": "{{domenTest}}/oauth/token",
@@ -5571,7 +5584,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"inurilloev313+2@gmail.com\",\r\n    \"password\": \"Izzat123.\"\r\n}\r\n"
+									"raw": "{\r\n    \"grant_type\": \"password\",\r\n    \"client_id\": 1,\r\n    \"login\": \"niprukt+3@gmail.com\",\r\n    \"password\": \"Qwer!234\"\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{domenTest}}/oauth/token",
